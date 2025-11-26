@@ -3,43 +3,195 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Mi página personal</title>
+    <title>Nat Wilson – Página personal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <header>
-        <h1>Hola, soy [tu nombre]</h1>
-        <p>Estudiante de Ciencia de Datos en el ITAM.</p>
-        <nav>
-            <a href="#sobre-mi">Sobre mí</a>
-            <a href="#proyectos">Proyectos</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
+    <header class="site-header">
+        <div class="container nav-container">
+            <div class="logo">Nat Wilson</div>
+            <nav class="nav">
+                <a href="#inicio">Inicio</a>
+                <a href="#sobre-mi">Sobre mí</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#habilidades">Habilidades</a>
+                <a href="#formacion">Formación</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section id="sobre-mi">
-            <h2>Sobre mí</h2>
-            <p>Aquí escribes una mini bio bonita.</p>
+        <!-- HERO -->
+        <section id="inicio" class="section hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <p class="hero-kicker">Bienvenida a mi rinconcito pastel de internet</p>
+                    <h1>Hola, soy Nat 🌸</h1>
+                    <p class="hero-subtitle">
+                        Estudiante de Ciencia de Datos en el ITAM. Me gustan los proyectos
+                        donde los datos se conectan con historias, ciudades y personas.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#proyectos" class="btn btn-primary">Ver mis proyectos</a>
+                        <a href="#contacto" class="btn btn-secondary">Contactarme</a>
+                    </div>
+                </div>
+                <div class="hero-side">
+                    <div class="hero-polaroid">
+                        <div class="hero-polaroid-img">
+                            <span class="hero-emoji">📷</span>
+                        </div>
+                        <p class="hero-caption">Polaroids de datos y proyectos</p>
+                    </div>
+                    <div class="floating-sticker sticker-1">✨</div>
+                    <div class="floating-sticker sticker-2">🌸</div>
+                    <div class="floating-sticker sticker-3">💻</div>
+                </div>
+            </div>
         </section>
 
-        <section id="proyectos">
-            <h2>Proyectos</h2>
-            <ul>
-                <li>Proyecto 911 CDMX – análisis de llamadas de emergencia.</li>
-                <li>Proyecto ECOBICI CDMX – análisis de viajes.</li>
-            </ul>
+        <!-- SOBRE MÍ -->
+        <section id="sobre-mi" class="section">
+            <div class="container">
+                <h2>Sobre mí</h2>
+                <p>
+                    Soy estudiante de Ciencia de Datos y me interesa combinar herramientas
+                    cuantitativas con problemas reales: transporte, seguridad, políticas
+                    públicas y proyectos con impacto social. Me gusta documentar bien mis
+                    procesos, trabajar en equipo y aprender tecnologías nuevas que me
+                    permitan contar mejores historias con datos.
+                </p>
+            </div>
         </section>
 
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p>Puedes escribirme a: <a href="mailto:tu_correo@example.com">tu_correo@example.com</a></p>
+        <!-- PROYECTOS (POLAROIDS) -->
+        <section id="proyectos" class="section section-alt">
+            <div class="container">
+                <h2>Proyectos destacados</h2>
+                <p class="section-intro">
+                    Una pequeña colección de polaroids de proyectos en los que he trabajado.
+                </p>
+
+                <div class="polaroid-grid">
+
+                    <article class="polaroid tilt-left">
+                        <div class="polaroid-img">
+                            <span class="polaroid-emoji">🚑</span>
+                        </div>
+                        <h3>Proyecto 911 CDMX</h3>
+                        <p>
+                            Análisis de llamadas de emergencia para entender el impacto del
+                            confinamiento por COVID-19 en las colonias de la ciudad.
+                        </p>
+                        <p class="polaroid-meta">Python · PostgreSQL · Visualización</p>
+                        <span class="sticker">✨</span>
+                    </article>
+
+                    <article class="polaroid tilt-right">
+                        <div class="polaroid-img">
+                            <span class="polaroid-emoji">🚲</span>
+                        </div>
+                        <h3>ECOBICI CDMX</h3>
+                        <p>
+                            Exploración de duración de viajes, estaciones y horarios pico
+                            utilizando datos abiertos y PySpark.
+                        </p>
+                        <p class="polaroid-meta">PySpark · Datos abiertos CDMX</p>
+                        <span class="sticker">🌸</span>
+                    </article>
+
+                    <article class="polaroid tilt-left">
+                        <div class="polaroid-img">
+                            <span class="polaroid-emoji">📊</span>
+                        </div>
+                        <h3>Dashboard de análisis</h3>
+                        <p>
+                            Construcción de dashboards interactivos para visualizar métricas
+                            clave y comunicar hallazgos de forma clara.
+                        </p>
+                        <p class="polaroid-meta">Tableau / Power BI · Storytelling</p>
+                        <span class="sticker">💖</span>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- HABILIDADES -->
+        <section id="habilidades" class="section">
+            <div class="container">
+                <h2>Habilidades</h2>
+                <div class="skills-grid">
+                    <div class="skill-column">
+                        <h3>Lenguajes</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>R</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+                    <div class="skill-column">
+                        <h3>Herramientas</h3>
+                        <ul>
+                            <li>Git &amp; GitHub</li>
+                            <li>PostgreSQL</li>
+                            <li>Tableau / Power BI</li>
+                        </ul>
+                    </div>
+                    <div class="skill-column">
+                        <h3>Intereses</h3>
+                        <ul>
+                            <li>Analítica de datos</li>
+                            <li>Políticas públicas</li>
+                            <li>Proyectos con impacto social</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMACIÓN -->
+        <section id="formacion" class="section section-alt">
+            <div class="container">
+                <h2>Formación</h2>
+                <ul class="timeline">
+                    <li>
+                        <h3>Licenciatura en Ciencia de Datos</h3>
+                        <p>ITAM · [Año de inicio] – Presente</p>
+                        <p class="timeline-meta">
+                            Cursos destacados: Probabilidad, Bases de Datos, Fuentes de Datos,
+                            Machine Learning.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="section">
+            <div class="container">
+                <h2>Contacto</h2>
+                <p>
+                    Si te interesa colaborar en un proyecto, platicar sobre ideas o tienes
+                    alguna duda, puedes encontrarme aquí:
+                </p>
+                <ul class="contact-list">
+                    <li>Email: <a href="mailto:tu.correo@ejemplo.com">tu.correo@ejemplo.com</a></li>
+                    <li>LinkedIn: <a href="#" target="_blank" rel="noopener">Mi perfil de LinkedIn</a></li>
+                    <li>GitHub: <a href="https://github.com/NatWilsonr" target="_blank" rel="noopener">NatWilsonr</a>
+                    </li>
+                </ul>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>© 2025 [tu nombre]</p>
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 Nat Wilson. Construido con HTML, CSS y GitHub Pages.</p>
+        </div>
     </footer>
 </body>
 
