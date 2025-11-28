@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <!-- HEADER -->
     <header class="site-header">
         <div class="container nav-container">
             <div class="logo">Nat Wilson</div>
@@ -24,9 +25,11 @@
     </header>
 
     <main>
+
         <!-- HERO -->
         <section id="inicio" class="section hero">
             <div class="container hero-content">
+
                 <div class="hero-text">
                     <p class="hero-kicker">Bienvenida a mi rinconcito pastel de internet</p>
                     <h1>Hola, soy Nat 🌸</h1>
@@ -34,24 +37,27 @@
                         Estudiante de Ciencia de Datos en el ITAM. Me gustan los proyectos
                         donde los datos se conectan con historias, ciudades y personas.
                     </p>
+
                     <div class="hero-actions">
                         <a href="#proyectos" class="btn btn-primary">Ver mis proyectos</a>
                         <a href="#contacto" class="btn btn-secondary">Contactarme</a>
                     </div>
                 </div>
+
                 <div class="hero-side">
                     <div class="hero-polaroid">
                         <div class="hero-polaroid-img">
-                            <!-- Cambia el nombre de la imagen si es diferente -->
-                            <img src="assets/hero-polaroid.png" alt="Foto de Nat trabajando en proyectos de datos"
+                            <img src="assets/hero-polaroid.png" alt="Foto de Nat trabajando en proyectos"
                                 class="hero-polaroid-photo" />
                         </div>
                         <p class="hero-caption">Polaroids de datos y proyectos</p>
                     </div>
+
                     <div class="floating-sticker sticker-1">✨</div>
                     <div class="floating-sticker sticker-2">🌸</div>
                     <div class="floating-sticker sticker-3">💻</div>
                 </div>
+
             </div>
         </section>
 
@@ -59,6 +65,7 @@
         <section id="sobre-mi" class="section">
             <div class="container">
                 <h2>Sobre mí</h2>
+
                 <div class="about-content">
                     <p>
                         Soy estudiante de Ciencia de Datos y me interesa combinar herramientas
@@ -67,21 +74,30 @@
                         procesos, trabajar en equipo y aprender tecnologías nuevas que me
                         permitan contar mejores historias con datos.
                     </p>
+
                     <p class="about-travel">
                         He tenido la oportunidad de vivir y aprender en diferentes lugares, y
                         eso me ha enseñado a adaptarme, observar con curiosidad y disfrutar
                         muchísimo conocer ciudades nuevas.
                     </p>
-                    <!-- Cambia el nombre de la imagen si es diferente -->
-                    <img src="assets/world-map.png" alt="Mapa del mundo representando los lugares donde he vivido"
-                        class="about-map" />
+
+                    <div class="about-map-wrapper">
+                        <img src="assets/world-map.png" alt="Mapa del mundo representando los lugares donde he vivido"
+                            class="about-map" />
+
+                        <div class="about-map-label">
+                            Los cambios de ciudad han marcado mi forma de ver el mundo y de trabajar con datos.
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </section>
 
         <!-- PROYECTOS -->
         <section id="proyectos" class="section section-alt">
             <div class="container">
+
                 <h2>Proyectos destacados</h2>
                 <p class="section-intro">
                     Pequeñas polaroids de algunos proyectos de datos en los que he trabajado.
@@ -90,7 +106,7 @@
 
                 <div class="polaroid-grid">
 
-                    <!-- PROYECTO 1: 911 CDMX -->
+                    <!-- Proyecto 1 -->
                     <article class="polaroid tilt-left">
                         <div class="polaroid-img">
                             <span class="polaroid-emoji">🚑</span>
@@ -100,8 +116,8 @@
 
                         <div class="polaroid-popup">
                             <p>
-                                Análisis de llamadas de emergencia para entender el impacto del
-                                confinamiento por COVID-19 en las colonias de la CDMX.
+                                Análisis de llamadas de emergencia para evaluar el impacto del
+                                confinamiento en diferentes colonias de la CDMX.
                             </p>
                             <p class="popup-meta">Python · PostgreSQL · Visualización</p>
                         </div>
@@ -109,7 +125,7 @@
                         <span class="sticker">✨</span>
                     </article>
 
-                    <!-- PROYECTO 2: ECOBICI (placeholder) -->
+                    <!-- Proyecto 2 -->
                     <article class="polaroid tilt-right">
                         <div class="polaroid-img">
                             <span class="polaroid-emoji">🚲</span>
@@ -119,7 +135,7 @@
 
                         <div class="polaroid-popup">
                             <p>
-                                Exploración de patrones de viaje, tiempos y estaciones utilizando
+                                Exploración de patrones de viaje, tiempo de uso y estaciones usando
                                 datos de ECOBICI en CDMX.
                             </p>
                             <p class="popup-meta">PySpark · Datos abiertos</p>
@@ -128,7 +144,7 @@
                         <span class="sticker">🌸</span>
                     </article>
 
-                    <!-- PROYECTO 3: Dashboard (placeholder) -->
+                    <!-- Proyecto 3 -->
                     <article class="polaroid tilt-left">
                         <div class="polaroid-img">
                             <span class="polaroid-emoji">📊</span>
@@ -138,10 +154,10 @@
 
                         <div class="polaroid-popup">
                             <p>
-                                Dashboards interactivos para comunicar hallazgos de manera clara
-                                a públicos no técnicos.
+                                Dashboards interactivos para comunicar hallazgos a públicos no
+                                técnicos mediante storytelling visual.
                             </p>
-                            <p class="popup-meta">Tableau / Power BI</p>
+                            <p class="popup-meta">Tableau · Power BI</p>
                         </div>
 
                         <span class="sticker">💖</span>
@@ -165,14 +181,16 @@
                             <li>SQL</li>
                         </ul>
                     </div>
+
                     <div class="skill-column">
                         <h3>Herramientas</h3>
                         <ul>
-                            <li>Git &amp; GitHub</li>
+                            <li>Git & GitHub</li>
                             <li>PostgreSQL</li>
                             <li>Tableau / Power BI</li>
                         </ul>
                     </div>
+
                     <div class="skill-column">
                         <h3>Intereses</h3>
                         <ul>
@@ -183,7 +201,7 @@
                     </div>
                 </div>
 
-                <!-- Aquí luego agregamos los logos reales -->
+                <!-- Luego reemplazamos con tus logos reales -->
                 <div class="skills-icons">
                     <img src="assets/skills/python.svg" alt="Python" />
                     <img src="assets/skills/r.svg" alt="R" />
@@ -199,6 +217,7 @@
         <section id="formacion" class="section">
             <div class="container">
                 <h2>Formación</h2>
+
                 <p class="formacion-intro">
                     Actualmente estudio la Licenciatura en Ciencia de Datos en el ITAM.
                     Me interesan especialmente los cursos que combinan matemáticas,
@@ -221,26 +240,17 @@
                 <h2>Contacto</h2>
                 <p>
                     Si te interesa colaborar en un proyecto, platicar sobre ideas o tienes
-                    alguna duda, puedes encontrarme aquí:
+                    alguna duda, puedes contactarme aquí:
                 </p>
+
                 <ul class="contact-list">
-                    <li>
-                        Email:
-                        <a href="mailto:tu.correo@ejemplo.com">tu.correo@ejemplo.com</a>
-                    </li>
-                    <li>
-                        LinkedIn:
-                        <a href="#" target="_blank" rel="noopener">Mi perfil de LinkedIn</a>
-                    </li>
-                    <li>
-                        GitHub:
-                        <a href="https://github.com/NatWilsonr" target="_blank" rel="noopener">
-                            NatWilsonr
-                        </a>
-                    </li>
+                    <li>Email: <a href="mailto:tu.correo@ejemplo.com">tu.correo@ejemplo.com</a></li>
+                    <li>LinkedIn: <a href="#" target="_blank">Mi perfil de LinkedIn</a></li>
+                    <li>GitHub: <a href="https://github.com/NatWilsonr" target="_blank">NatWilsonr</a></li>
                 </ul>
             </div>
         </section>
+
     </main>
 
     <footer class="site-footer">
@@ -248,6 +258,7 @@
             <p>© 2025 Nat Wilson. Construido con HTML, CSS y GitHub Pages.</p>
         </div>
     </footer>
+
 </body>
 
 </html>

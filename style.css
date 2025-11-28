@@ -7,7 +7,8 @@
     --pink-alt: #ffeef7;
     --pink-main: #f472b6;
     --pink-soft: #f9a8d4;
-    --lavender: #a5b4fc;
+    --mauve-projects: #c0537e;
+    /* nuevo color más neutro */
     --text-dark: #3f2a3c;
     --text-muted: #9b6b8b;
     --card-bg: #ffffff;
@@ -272,11 +273,29 @@ a:hover {
     color: var(--text-muted);
 }
 
+/* Mapa + etiqueta flotante */
+.about-map-wrapper {
+    position: relative;
+    margin-top: 1rem;
+}
+
 .about-map {
     width: 100%;
-    margin-top: 1rem;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.about-map-label {
+    position: absolute;
+    left: 50%;
+    bottom: 0.9rem;
+    transform: translateX(-50%);
+    background: rgba(255, 247, 251, 0.95);
+    color: var(--text-dark);
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 /* ------------------------------------------------------ */
@@ -284,7 +303,7 @@ a:hover {
 /* ------------------------------------------------------ */
 
 #proyectos {
-    background-color: #f973b8;
+    background-color: var(--mauve-projects);
     color: #ffffff;
 }
 
@@ -335,7 +354,6 @@ a:hover {
     font-weight: 600;
 }
 
-/* Links */
 .polaroid-link {
     display: inline-block;
     margin-top: 0.4rem;
@@ -359,7 +377,7 @@ a:hover {
     transform: rotate(10deg);
 }
 
-/* Polaroid rotates */
+/* Tilt */
 .tilt-left {
     transform: rotate(-2deg);
 }
@@ -373,7 +391,7 @@ a:hover {
     box-shadow: var(--shadow-strong);
 }
 
-/* Popup on hover */
+/* Popup */
 .polaroid-popup {
     position: absolute;
     inset: 10px;
@@ -384,20 +402,20 @@ a:hover {
     font-size: 0.85rem;
     box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
     opacity: 0;
-    transform: translateY(6px);
     pointer-events: none;
+    transform: translateY(6px);
     transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.polaroid:hover .polaroid-popup {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .popup-meta {
     margin-top: 0.4rem;
     color: var(--text-muted);
     font-size: 0.8rem;
-}
-
-.polaroid:hover .polaroid-popup {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* ------------------------------------------------------ */
@@ -419,7 +437,7 @@ a:hover {
     padding-left: 1.1rem;
 }
 
-/* Logos de habilidades */
+/* Logos */
 .skills-icons {
     display: flex;
     flex-wrap: wrap;
@@ -434,7 +452,7 @@ a:hover {
 }
 
 /* ------------------------------------------------------ */
-/* FORMACIÓN */
+/* FORMACIÓN – estilo doodle */
 /* ------------------------------------------------------ */
 
 #formacion {
@@ -453,46 +471,27 @@ a:hover {
     margin-top: 1.4rem;
 }
 
+/* Burbuja estilo doodle */
 .course-bubble {
     position: relative;
-    background: #ffe4f3;
+    background: #f7cfa4;
     color: var(--text-dark);
     border-radius: 999px;
-    padding: 0.4rem 1rem;
+    padding: 0.45rem 1.3rem;
     font-size: 0.9rem;
-    box-shadow: 0 8px 18px rgba(244, 114, 182, 0.25);
+    border: 2px solid #3f2a3c;
+    box-shadow: 4px 5px 0 rgba(0, 0, 0, 0.18);
 }
 
-/* Washi tape */
-.course-bubble::before {
+/* Sombra desplazada */
+.course-bubble::after {
     content: "";
     position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%) rotate(-4deg);
-    width: 48px;
-    height: 14px;
-    border-radius: 6px;
-    background-image: linear-gradient(135deg,
-            #fed7e2 0%,
-            #f9a8d4 40%,
-            #e9d5ff 70%,
-            #bfdbfe 100%);
-    opacity: 0.9;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-}
-
-/* Variaciones para realismo */
-.courses-row .course-bubble:nth-child(2)::before {
-    transform: translateX(-50%) rotate(3deg);
-}
-
-.courses-row .course-bubble:nth-child(3)::before {
-    transform: translateX(-50%) rotate(-1deg);
-}
-
-.courses-row .course-bubble:nth-child(4)::before {
-    transform: translateX(-50%) rotate(5deg);
+    inset: 0;
+    border-radius: inherit;
+    background: rgba(0, 0, 0, 0.05);
+    transform: translate(3px, 4px);
+    z-index: -1;
 }
 
 /* ------------------------------------------------------ */
@@ -538,16 +537,11 @@ a:hover {
         text-align: center;
     }
 
-    .hero-subtitle {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     .hero-actions {
         display: flex;
         flex-direction: column;
-        align-items: center;
         gap: 0.75rem;
+        align-items: center;
     }
 
     .hero-actions .btn {
