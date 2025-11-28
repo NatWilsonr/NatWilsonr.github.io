@@ -1,4 +1,7 @@
-/* PALETA PASTEL */
+/* ------------------------------------------------------ */
+/* PALETA DE COLORES */
+/* ------------------------------------------------------ */
+
 :root {
     --pink-bg: #fff7fb;
     --pink-alt: #ffeef7;
@@ -12,7 +15,10 @@
     --shadow-strong: 0 12px 32px rgba(244, 114, 182, 0.32);
 }
 
-/* RESET BÁSICO */
+/* ------------------------------------------------------ */
+/* RESET */
+/* ------------------------------------------------------ */
+
 *,
 *::before,
 *::after {
@@ -21,7 +27,8 @@
 
 body {
     margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
     background-color: var(--pink-bg);
     color: var(--text-dark);
     line-height: 1.6;
@@ -42,7 +49,9 @@ a:hover {
     padding: 0 1.5rem;
 }
 
+/* ------------------------------------------------------ */
 /* HEADER / NAV */
+/* ------------------------------------------------------ */
 
 .site-header {
     position: sticky;
@@ -70,7 +79,9 @@ a:hover {
     font-size: 0.95rem;
 }
 
-/* SECCIONES GENERALES */
+/* ------------------------------------------------------ */
+/* SECCIONES */
+/* ------------------------------------------------------ */
 
 .section {
     padding: 4rem 0;
@@ -91,7 +102,9 @@ a:hover {
     margin-bottom: 2rem;
 }
 
+/* ------------------------------------------------------ */
 /* HERO */
+/* ------------------------------------------------------ */
 
 .hero {
     padding: 5rem 0 4rem;
@@ -133,27 +146,33 @@ a:hover {
     justify-content: center;
 }
 
+/* Polaroid más grande */
 .hero-polaroid {
     background: var(--card-bg);
-    padding: 1rem 1rem 1.5rem;
-    border-radius: 16px;
+    padding: 1.1rem 1.1rem 1.6rem;
+    border-radius: 18px;
     box-shadow: var(--shadow-soft);
     text-align: center;
-    max-width: 220px;
+    max-width: 260px;
     transform: rotate(-3deg);
 }
 
 .hero-polaroid-img {
     background: var(--pink-alt);
-    border-radius: 10px;
-    height: 160px;
+    border-radius: 12px;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
-.hero-emoji {
-    font-size: 3rem;
+.hero-polaroid-photo {
+    width: 90%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .hero-caption {
@@ -162,8 +181,7 @@ a:hover {
     color: var(--text-muted);
 }
 
-/* STICKERS FLOTANTES */
-
+/* Stickers flotantes */
 .floating-sticker {
     position: absolute;
     font-size: 1.6rem;
@@ -199,7 +217,9 @@ a:hover {
     }
 }
 
+/* ------------------------------------------------------ */
 /* BOTONES */
+/* ------------------------------------------------------ */
 
 .btn {
     display: inline-block;
@@ -232,7 +252,46 @@ a:hover {
     background-color: #fdf2f8;
 }
 
-/* POLAROIDS */
+/* ------------------------------------------------------ */
+/* SOBRE MÍ */
+/* ------------------------------------------------------ */
+
+#sobre-mi {
+    background-color: var(--pink-alt);
+}
+
+.about-content {
+    max-width: 40rem;
+}
+
+.about-content p {
+    margin-bottom: 0.6rem;
+}
+
+.about-travel {
+    color: var(--text-muted);
+}
+
+.about-map {
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ------------------------------------------------------ */
+/* PROYECTOS */
+/* ------------------------------------------------------ */
+
+#proyectos {
+    background-color: #f973b8;
+    color: #ffffff;
+}
+
+#proyectos h2,
+#proyectos .section-intro {
+    color: #ffffff;
+}
 
 .polaroid-grid {
     display: flex;
@@ -252,12 +311,12 @@ a:hover {
     position: relative;
     text-align: center;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-    margin: 0.5rem;
 }
 
+/* Imagen polaroid */
 .polaroid-img {
     width: 100%;
-    height: 180px;
+    height: 160px;
     background: var(--pink-alt);
     border-radius: 6px;
     display: flex;
@@ -276,14 +335,20 @@ a:hover {
     font-weight: 600;
 }
 
-.polaroid p {
-    font-size: 0.9rem;
+/* Links */
+.polaroid-link {
+    display: inline-block;
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    background: #ffe4f3;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
 }
 
-.polaroid-meta {
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    margin-top: 0.3rem;
+#proyectos .polaroid-link {
+    background: #fff;
 }
 
 .sticker {
@@ -294,8 +359,7 @@ a:hover {
     transform: rotate(10deg);
 }
 
-/* Rotaciones */
-
+/* Polaroid rotates */
 .tilt-left {
     transform: rotate(-2deg);
 }
@@ -304,14 +368,46 @@ a:hover {
     transform: rotate(2deg);
 }
 
-/* Hover */
-
 .polaroid:hover {
     transform: translateY(-6px) rotate(2deg);
     box-shadow: var(--shadow-strong);
 }
 
+/* Popup on hover */
+.polaroid-popup {
+    position: absolute;
+    inset: 10px;
+    background: #ffffff;
+    color: var(--text-dark);
+    border-radius: 12px;
+    padding: 0.75rem 0.9rem;
+    font-size: 0.85rem;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+    opacity: 0;
+    transform: translateY(6px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.popup-meta {
+    margin-top: 0.4rem;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.polaroid:hover .polaroid-popup {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ------------------------------------------------------ */
 /* HABILIDADES */
+/* ------------------------------------------------------ */
+
+#habilidades h2 .gear {
+    font-size: 1.3em;
+    margin-left: 0.2rem;
+}
 
 .skills-grid {
     display: grid;
@@ -319,32 +415,89 @@ a:hover {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
-.skill-column h3 {
-    margin-top: 0;
-}
-
 .skill-column ul {
     padding-left: 1.1rem;
 }
 
+/* Logos de habilidades */
+.skills-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.2rem;
+}
+
+.skills-icons img {
+    height: 32px;
+    width: auto;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15));
+}
+
+/* ------------------------------------------------------ */
 /* FORMACIÓN */
+/* ------------------------------------------------------ */
 
-.timeline {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
+#formacion {
+    background-color: var(--pink-bg);
 }
 
-.timeline li {
-    margin-bottom: 1.5rem;
-}
-
-.timeline-meta {
+.formacion-intro {
+    max-width: 38rem;
     color: var(--text-muted);
-    font-size: 0.9rem;
 }
 
+.courses-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: 1.4rem;
+}
+
+.course-bubble {
+    position: relative;
+    background: #ffe4f3;
+    color: var(--text-dark);
+    border-radius: 999px;
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+    box-shadow: 0 8px 18px rgba(244, 114, 182, 0.25);
+}
+
+/* Washi tape */
+.course-bubble::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-4deg);
+    width: 48px;
+    height: 14px;
+    border-radius: 6px;
+    background-image: linear-gradient(135deg,
+            #fed7e2 0%,
+            #f9a8d4 40%,
+            #e9d5ff 70%,
+            #bfdbfe 100%);
+    opacity: 0.9;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+/* Variaciones para realismo */
+.courses-row .course-bubble:nth-child(2)::before {
+    transform: translateX(-50%) rotate(3deg);
+}
+
+.courses-row .course-bubble:nth-child(3)::before {
+    transform: translateX(-50%) rotate(-1deg);
+}
+
+.courses-row .course-bubble:nth-child(4)::before {
+    transform: translateX(-50%) rotate(5deg);
+}
+
+/* ------------------------------------------------------ */
 /* CONTACTO */
+/* ------------------------------------------------------ */
 
 .contact-list {
     list-style: none;
@@ -355,7 +508,9 @@ a:hover {
     margin-bottom: 0.5rem;
 }
 
+/* ------------------------------------------------------ */
 /* FOOTER */
+/* ------------------------------------------------------ */
 
 .site-footer {
     padding: 1.5rem 0;
@@ -365,12 +520,13 @@ a:hover {
     text-align: center;
 }
 
+/* ------------------------------------------------------ */
 /* MOBILE */
+/* ------------------------------------------------------ */
 
 @media (max-width: 768px) {
     .nav {
         display: none;
-        /* si quieres luego hacemos menú hamburguesa */
     }
 
     .nav-container {
