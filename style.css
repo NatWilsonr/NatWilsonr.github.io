@@ -484,69 +484,133 @@ img {
 }
 
 .polaroid {
-    background: var(--card-bg);
+    background: #fef9f3;
     width: 100%;
-    max-width: 280px;
-    padding: 16px;
-    padding-bottom: 40px;
-    border: var(--pixel-border);
+    max-width: 300px;
+    padding: 0;
+    border: 5px solid var(--text-dark);
     box-shadow: var(--pixel-shadow);
     position: relative;
     text-align: center;
     transition: transform 0.1s ease, box-shadow 0.1s ease;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
+/* Borde interior claro */
+.polaroid::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Sombra interna para profundidad */
 .polaroid::after {
     content: "";
     position: absolute;
-    top: -3px;
-    left: -3px;
-    right: -3px;
-    bottom: -3px;
-    background: var(--pink-alt);
-    z-index: -1;
-    border: 2px solid var(--text-dark);
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 0;
 }
 
-/* Imagen polaroid */
+/* Imagen polaroid - ahora área de ilustración tipo carta */
 .polaroid-img {
     width: 100%;
-    height: 160px;
-    background: var(--pink-alt);
-    border: 2px solid var(--text-dark);
+    height: 180px;
+    background: linear-gradient(135deg, var(--pink-alt) 0%, var(--pink-soft) 100%);
+    border-bottom: 3px solid var(--text-dark);
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    padding: 12px;
+}
+
+.polaroid-img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.1) 10px, rgba(255, 255, 255, 0.1) 11px);
+    pointer-events: none;
 }
 
 .polaroid-emoji {
-    font-size: 2.5rem;
+    font-size: 4rem;
+    filter: drop-shadow(2px 2px 0px rgba(63, 42, 60, 0.3));
+    z-index: 1;
+    position: relative;
 }
 
+/* Banner tipo cinta para el título */
 .polaroid h3 {
-    margin: 0.7rem 0 0.3rem;
-    font-size: 14px;
-    color: var(--pink-main);
+    margin: 0;
+    padding: 0.7rem 1.2rem;
+    font-size: 11px;
+    color: var(--text-dark);
     font-weight: 400;
     font-family: "Press Start 2P", monospace;
     text-transform: uppercase;
-    line-height: 1.5;
-    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.3);
+    line-height: 1.4;
+    text-shadow: 2px 2px 0px rgba(63, 42, 60, 0.5), -1px -1px 0px rgba(63, 42, 60, 0.5), 1px -1px 0px rgba(63, 42, 60, 0.5), -1px 1px 0px rgba(63, 42, 60, 0.5);
+    background: linear-gradient(135deg, var(--pink-soft) 0%, #f9a8d4 100%);
+    border-top: 3px solid var(--text-dark);
+    border-bottom: 3px solid var(--text-dark);
+    position: relative;
+    z-index: 2;
+    clip-path: polygon(12px 0%, calc(100% - 12px) 0%, 100% 50%, calc(100% - 12px) 100%, 12px 100%, 0% 50%);
+}
+
+/* Efecto de profundidad en el banner */
+.polaroid h3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.2);
+    clip-path: polygon(12px 0%, calc(100% - 12px) 0%, 100% 50%, calc(100% - 12px) 100%, 12px 100%, 0% 50%);
+    pointer-events: none;
+}
+
+/* Contenedor para el contenido de la carta */
+.polaroid-content {
+    padding: 1rem;
+    background: #fef9f3;
+    position: relative;
+    z-index: 2;
 }
 
 .polaroid-link {
     display: inline-block;
-    margin-top: 0.4rem;
-    font-size: 20px;
+    margin-top: 0.6rem;
+    font-size: 18px;
     font-weight: 400;
     color: var(--text-dark);
-    background: #ffe4f3;
-    padding: 0.4rem 0.9rem;
+    background: var(--pink-alt);
+    padding: 0.5rem 1rem;
     border: 3px solid var(--text-dark);
     text-transform: uppercase;
     box-shadow: 2px 2px 0px rgba(63, 42, 60, 0.2);
     transition: all 0.1s ease;
-    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.2);
+    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.3);
+    font-family: "VT323", monospace;
 }
 
 .polaroid-link:hover {
@@ -556,15 +620,42 @@ img {
 }
 
 #proyectos .polaroid-link {
-    background: #fff;
+    background: var(--pink-alt);
+    color: var(--text-dark);
 }
 
+#proyectos .polaroid-link:hover {
+    background: var(--pink-soft);
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0px rgba(63, 42, 60, 0.3);
+    text-decoration: none;
+}
+
+/* Estrella decorativa estilo videojuego */
 .sticker {
     position: absolute;
-    top: -10px;
-    right: -10px;
-    font-size: 1.6rem;
-    transform: rotate(10deg);
+    top: -8px;
+    right: -8px;
+    font-size: 2rem;
+    transform: rotate(15deg);
+    z-index: 10;
+    filter: drop-shadow(3px 3px 0px rgba(63, 42, 60, 0.4));
+    text-shadow: 2px 2px 0px rgba(63, 42, 60, 0.5);
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: rotate(15deg) scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: rotate(15deg) scale(1.1);
+    }
 }
 
 /* Tilt */
@@ -577,25 +668,44 @@ img {
 }
 
 .polaroid:hover {
-    transform: translateY(-4px) rotate(2deg);
-    box-shadow: var(--pixel-shadow-hover);
+    transform: translateY(-6px) rotate(2deg);
+    box-shadow: 8px 8px 0px rgba(63, 42, 60, 0.4);
 }
 
-/* Popup */
+.polaroid:hover .sticker {
+    animation: twinkle 0.5s ease-in-out infinite;
+    transform: rotate(25deg) scale(1.2);
+}
+
+/* Popup estilo carta */
 .polaroid-popup {
     position: absolute;
-    inset: 10px;
-    background: #ffffff;
+    inset: 8px;
+    background: #fef9f3;
     color: var(--text-dark);
-    border: var(--pixel-border);
-    padding: 1rem 1.2rem;
-    font-size: 20px;
+    border: 4px solid var(--text-dark);
+    padding: 1.2rem 1.4rem;
+    font-size: 18px;
     box-shadow: var(--pixel-shadow-hover);
     opacity: 0;
     pointer-events: none;
     transform: translateY(6px);
     transition: opacity 0.2s ease, transform 0.2s ease;
     text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.15);
+    border-radius: 4px;
+    z-index: 20;
+}
+
+.polaroid-popup::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 2px;
+    pointer-events: none;
 }
 
 .polaroid:hover .polaroid-popup {
