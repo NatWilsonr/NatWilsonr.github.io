@@ -386,7 +386,6 @@ body {
     gap: 0.8rem;
 }
 
-/* cada slot */
 .slot {
     width: 100%;
     aspect-ratio: 1/1;
@@ -397,14 +396,44 @@ body {
     align-items: center;
     justify-content: center;
     box-shadow: 4px 4px 0 rgba(49, 24, 39, .4);
+    position: relative;
+    /* necesario para el tooltip */
+    overflow: hidden;
+    /* por si alguna imagen se sale un poquito */
 }
 
 .slot img {
-    width: 60px;
-    height: 60px;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     image-rendering: pixelated;
 }
+
+/* Tooltip del inventario */
+.slot::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background: #311827;
+    color: #fff7fb;
+    padding: 0.15rem 0.4rem;
+    border-radius: 6px;
+    font-family: "VT323", monospace;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    box-shadow: 3px 3px 0 rgba(49, 24, 39, .7);
+}
+
+.slot:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
 
 /* ------------------------------------------------------ */
 /* FOOTER */
