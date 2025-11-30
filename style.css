@@ -373,10 +373,18 @@ body {
 }
 
 .inventory-title {
-    font-family: "Press Start 2P";
-    font-size: 14px;
-    margin-bottom: 1rem;
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    border: 3px solid #311827;
+    background-color: #ffffff;
+    box-shadow: 4px 4px 0 rgba(49, 24, 39, 0.7);
+    font-family: "Press Start 2P", sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 1.4rem;
 }
+
 
 /* rejilla tipo inventario */
 .inventory-grid {
@@ -408,6 +416,18 @@ body {
     object-fit: contain;
     image-rendering: pixelated;
 }
+
+/* fondos especiales para que combinen con el sprite */
+.slot[data-label="Python"] {
+    background-color: #ffe9b8;
+    /* amarillo pastel cálido */
+}
+
+.slot[data-label="Java"] {
+    background-color: #ffeedd;
+    /* cremita suave */
+}
+
 
 /* Tooltip del inventario */
 .slot::after {
