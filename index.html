@@ -1,235 +1,783 @@
-<!DOCTYPE html>
-<html lang="es">
+/* ------------------------------------------------------ */
+/* PALETA DE COLORES */
+/* ------------------------------------------------------ */
 
-<head>
-    <meta charset="UTF-8" />
-    <title>Nat Wilson – Página personal</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
-</head>
+:root {
+--pink-bg: #fff7fb;
+--pink-alt: #ffeef7;
+--pink-main: #f472b6;
+--pink-soft: #f9a8d4;
+--mauve-projects: #020617; /* ahora usamos un fondo oscuro de inventario */
+--text-dark: #3f2a3c;
+--text-muted: #9b6b8b;
+--card-bg: #ffffff;
 
-<body>
-    <!-- HEADER -->
-    <header class="site-header">
-        <div class="container header-inner">
-            <div class="logo-area">
-                <div class="logo-pixel-heart"></div>
-                <div class="logo-text">
-                    <span class="logo-title">Nat Wilson</span>
-                    <span class="logo-subtitle">Data & stories player</span>
-                </div>
-            </div>
+--border-dark: #311827;
+--accent-yellow: #facc15;
+--accent-mint: #4ade80;
 
-            <nav class="nav">
-                <a href="#inicio">Inicio</a>
-                <a href="#sobre-mi">Sobre mí</a>
-                <a href="#proyectos">Proyectos</a>
-                <a href="#habilidades">Habilidades</a>
-                <a href="#formacion">Formación</a>
-                <a href="#contacto">Contacto</a>
-            </nav>
-        </div>
-    </header>
+--shadow-strong: 12px 12px 0px rgba(63, 42, 60, 0.7);
+--shadow-soft: 8px 8px 0px rgba(63, 42, 60, 0.4);
 
-    <main>
-        <!-- HERO / INICIO -->
-        <section id="inicio" class="hero-section">
-            <div class="container hero-grid">
+--pixel-shadow: 6px 6px 0px rgba(63, 42, 60, 0.7);
+}
 
-                <div class="hero-text">
-                    <div class="hero-chip">Player 1 · Nat</div>
-                    <h1>Hola, soy Nat 🌸</h1>
-                    <p class="hero-subtitle">
-                        Estudiante de Ciencia de Datos en el ITAM. Me gustan los proyectos
-                        donde los datos se conectan con historias, ciudades y personas.
-                    </p>
+/* ------------------------------------------------------ */
+/* RESET & BASE */
+/* ------------------------------------------------------ */
 
-                    <div class="hero-actions">
-                        <a href="#proyectos" class="btn btn-primary">Ver mis proyectos</a>
-                        <a href="#contacto" class="btn btn-secondary">Contactarme</a>
-                    </div>
-                </div>
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
 
-                <div class="character-customization-interface">
-                    <!-- Panel: Character Customization -->
-                    <div class="character-customization-panel">
-                        <div class="customization-header">
-                            <h2 class="customization-title">Character Customization</h2>
-                        </div>
-                        <div class="character-image-container">
-                            <img src="assets/character-portrait.png" alt="Character portrait" class="character-image" />
-                        </div>
-                    </div>
-                </div>
+html {
+scroll-behavior: smooth;
+}
 
-            </div>
-        </section>
+body {
+font-family: "VT323", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+background-color: var(--pink-bg);
+background-image: repeating-linear-gradient(
+45deg,
+rgba(244, 114, 182, 0.06) 0px,
+rgba(244, 114, 182, 0.06) 8px,
+rgba(255, 247, 251, 0.9) 8px,
+rgba(255, 247, 251, 0.9) 16px
+);
+color: var(--text-dark);
+line-height: 1.6;
+image-rendering: pixelated;
+image-rendering: -moz-crisp-edges;
+image-rendering: crisp-edges;
+}
 
-        <!-- SOBRE MÍ -->
-        <section id="sobre-mi" class="section">
-            <div class="container about-grid">
-                <div class="about-text">
-                    <h2>Sobre mí</h2>
-                    <p>
-                        Soy estudiante de Ciencia de Datos en el ITAM y me gusta pensar que
-                        los datos no son solo números: detrás de cada fila hay personas, historias
-                        y decisiones importantes.
-                    </p>
-                    <p>
-                        Me interesa trabajar con proyectos que mezclen ciudades, movilidad, políticas públicas
-                        y justicia social. Disfruto mucho entender cómo funcionan los sistemas y encontrar patrones
-                        que puedan mejorar la vida de las personas.
-                    </p>
-                    <p class="about-travel">
-                        He tenido la oportunidad de vivir y aprender en diferentes lugares, y
-                        eso me ha enseñado a adaptarme, observar con curiosidad y disfrutar
-                        muchísimo conocer ciudades nuevas.
-                    </p>
+/* TIPOGRAFÍA GENERAL */
 
-                    <div class="about-map-wrapper">
-                        <img src="assets/world-map.png" alt="Mapa del mundo representando los lugares donde he vivido"
-                            class="about-map" />
+h1,
+h2,
+h3 {
+font-family: "Press Start 2P", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+letter-spacing: 1px;
+text-transform: uppercase;
+}
 
-                        <div class="about-map-label">
-                            Los cambios de ciudad han marcado mi forma de ver el mundo y de trabajar con datos.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+p,
+li,
+a,
+span {
+font-size: 18px;
+}
 
-        <!-- PROYECTOS -->
-        <section id="proyectos" class="section section-alt">
-            <div class="container">
+/* CONTENEDOR GENERAL */
 
-                <h2>Proyectos destacados</h2>
-                <p class="section-intro">
-                    Pequeñas polaroids de algunos proyectos de datos en los que he trabajado.
-                    Pasa el cursor encima para ver más detalles.
-                </p>
+.container {
+width: min(1100px, 100% - 2.5rem);
+margin: 0 auto;
+padding: 3rem 0;
+position: relative;
+}
 
-                <div class="project-card-container">
-                    <img src="assets/911-database-card.png" alt="911 Database Card"
-                        class="project-card-image project-card-1" />
-                    <img src="assets/gender-violence-card.png" alt="Gender Violence Card"
-                        class="project-card-image project-card-2" />
-                    <img src="assets/coming-soon-card.png" alt="Coming Soon Card"
-                        class="project-card-image project-card-3" />
-                </div>
+/* Decoración tipo HUD en contenedores */
+.container::before,
+.container::after {
+content: "◆";
+position: absolute;
+top: -10px;
+color: var(--pink-main);
+font-size: 12px;
+opacity: 0.3;
+text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.2);
+}
 
-            </div>
-        </section>
+.container::before {
+left: 0;
+}
 
-        <!-- HABILIDADES -->
-        <section id="habilidades" class="section">
-            <div class="container">
-                <h2>Habilidades</h2>
-                <p class="section-intro">
-                    Un mix entre herramientas técnicas y cosas que me gusta aprender todo el tiempo.
-                </p>
+.container::after {
+right: 0;
+}
 
-                <div class="skills-grid">
-                    <div class="skills-card">
-                        <h3>Lenguajes y herramientas</h3>
-                        <ul>
-                            <li>Python (pandas, matplotlib, scikit-learn)</li>
-                            <li>R para análisis estadístico</li>
-                            <li>SQL y bases de datos relacionales</li>
-                            <li>Git y GitHub</li>
-                            <li>Tableau / visualización de datos</li>
-                        </ul>
-                    </div>
+/* Enlaces generales */
 
-                    <div class="skills-card">
-                        <h3>En lo que quiero seguir creciendo</h3>
-                        <ul>
-                            <li>Machine Learning aplicado a problemas reales</li>
-                            <li>Ingeniería de datos y pipelines</li>
-                            <li>Comunicación de resultados para personas no técnicas</li>
-                            <li>Diseño de dashboards claros y bonitos</li>
-                        </ul>
-                    </div>
+a {
+color: inherit;
+text-decoration: none;
+}
 
-                    <div class="skills-card">
-                        <h3>Temas que me emocionan</h3>
-                        <ul>
-                            <li>Analítica de datos</li>
-                            <li>Políticas públicas</li>
-                            <li>Proyectos con impacto social</li>
-                        </ul>
-                    </div>
-                </div>
+a:hover {
+text-decoration: underline;
+}
 
-                <!-- Logos de skills -->
-                <div class="skills-icons">
-                    <img src="assets/skills/python.svg" alt="Python" />
-                    <img src="assets/skills/r.svg" alt="R" />
-                    <img src="assets/skills/sql.svg" alt="SQL" />
-                    <img src="assets/skills/git.svg" alt="Git" />
-                    <img src="assets/skills/postgresql.svg" alt="PostgreSQL" />
-                </div>
-            </div>
-        </section>
+/* ------------------------------------------------------ */
+/* HEADER */
+/* ------------------------------------------------------ */
 
-        <!-- FORMACIÓN -->
-        <section id="formacion" class="section section-alt">
-            <div class="container">
-                <h2>Formación</h2>
-                <p class="section-intro">
-                    Un poco de mi camino académico y las etapas que han ido definiendo lo que me gusta estudiar.
-                </p>
+.site-header {
+position: sticky;
+top: 0;
+z-index: 50;
+background: rgba(255, 247, 251, 0.96);
+backdrop-filter: blur(6px);
+border-bottom: 4px solid var(--border-dark);
+box-shadow: 0 4px 0 rgba(49, 24, 39, 0.4);
+}
 
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">2022 - Actual</div>
-                        <div class="timeline-content">
-                            <h3>Licenciatura en Ciencia de Datos</h3>
-                            <p>Instituto Tecnológico Autónomo de México (ITAM)</p>
-                            <p>Enfoque en probabilidad, estadística, programación y métodos cuantitativos.</p>
-                        </div>
-                    </div>
+.header-inner {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding-block: 1rem;
+}
 
-                    <div class="timeline-item">
-                        <div class="timeline-date">Intercambio (planeado)</div>
-                        <div class="timeline-content">
-                            <h3>Estudios en el extranjero</h3>
-                            <p>Interés en tomar cursos de data science, econometría y temas aplicados en Europa.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+/* LOGO */
 
-        <!-- CONTACTO -->
-        <section id="contacto" class="section">
-            <div class="container">
-                <h2>Contacto</h2>
-                <p class="section-intro">
-                    Si quieres platicar sobre proyectos, datos, ciudades o solo saludar, puedes escribir aquí:
-                </p>
+.logo-area {
+display: flex;
+align-items: center;
+gap: 0.75rem;
+}
 
-                <div class="contact-card">
-                    <p>Puedes encontrarme en:</p>
-                    <ul>
-                        <li>Email: <a href="mailto:tu.correo@ejemplo.com">tu.correo@ejemplo.com</a></li>
-                        <li>LinkedIn: <a href="#" target="_blank">Mi perfil de LinkedIn</a></li>
-                        <li>GitHub: <a href="https://github.com/NatWilsonr" target="_blank">NatWilsonr</a></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+.logo-pixel-heart {
+width: 32px;
+height: 32px;
+background: linear-gradient(90deg, #fb7185 0%, #f97373 50%, #f97373 100%);
+clip-path: polygon(
+50% 0%,
+61% 5%,
+72% 13%,
+80% 24%,
+84% 36%,
+83% 49%,
+78% 60%,
+68% 71%,
+50% 86%,
+32% 71%,
+22% 60%,
+17% 49%,
+16% 36%,
+20% 24%,
+28% 13%,
+39% 5%
+);
+box-shadow: 3px 3px 0 rgba(49, 24, 39, 0.7);
+image-rendering: pixelated;
+}
 
-    </main>
+.logo-text {
+display: flex;
+flex-direction: column;
+gap: 0.15rem;
+}
 
-    <footer class="site-footer">
-        <div class="container">
-            <p>© 2025 Nat Wilson. Construido con HTML, CSS y GitHub Pages.</p>
-        </div>
-    </footer>
+.logo-title {
+font-family: "Press Start 2P", sans-serif;
+font-size: 14px;
+text-transform: uppercase;
+}
 
-</body>
+.logo-subtitle {
+font-size: 14px;
+color: var(--text-muted);
+}
 
-</html>
+/* NAV */
+
+.nav {
+display: flex;
+gap: 0.75rem;
+flex-wrap: wrap;
+justify-content: flex-end;
+}
+
+.nav a {
+font-family: "Press Start 2P", sans-serif;
+font-size: 10px;
+text-decoration: none;
+color: var(--text-dark);
+padding: 0.4rem 0.7rem;
+border-radius: 6px;
+border: 2px solid transparent;
+background-color: rgba(255, 255, 255, 0.9);
+box-shadow: 4px 4px 0 rgba(49, 24, 39, 0.4);
+transition: all 0.1s ease;
+text-transform: uppercase;
+text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.3);
+}
+
+.nav a:hover {
+background-color: var(--pink-soft);
+border: 2px solid var(--text-dark);
+box-shadow: var(--pixel-shadow);
+text-decoration: none;
+}
+
+/* ------------------------------------------------------ */
+/* SECCIONES */
+/* ------------------------------------------------------ */
+
+.section {
+padding-block: 4rem;
+}
+
+.section-alt {
+background-color: var(--pink-alt);
+border-block: 4px solid var(--border-dark);
+}
+
+.section h2 {
+font-size: 20px;
+margin-bottom: 1.25rem;
+text-shadow: 2px 2px 0px rgba(63, 42, 60, 0.6);
+}
+
+.section-intro {
+max-width: 640px;
+margin-bottom: 2rem;
+}
+
+/* ------------------------------------------------------ */
+/* HERO */
+/* ------------------------------------------------------ */
+
+.hero-section {
+padding-block: 4rem 2rem;
+}
+
+.hero-grid {
+display: grid;
+grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+gap: 3rem;
+align-items: center;
+}
+
+.hero-chip {
+display: inline-block;
+font-family: "Press Start 2P", sans-serif;
+font-size: 10px;
+padding: 0.35rem 0.6rem;
+border-radius: 999px;
+border: 2px solid var(--border-dark);
+background-color: #fff;
+margin-bottom: 1rem;
+box-shadow: 4px 4px 0 rgba(49, 24, 39, 0.6);
+}
+
+.hero-text h1 {
+font-size: 22px;
+margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+margin-bottom: 1.5rem;
+max-width: 520px;
+}
+
+/* Botones */
+
+.hero-actions {
+display: flex;
+flex-wrap: wrap;
+gap: 0.8rem;
+}
+
+.btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+font-family: "Press Start 2P", sans-serif;
+font-size: 10px;
+padding: 0.6rem 1rem;
+border-radius: 8px;
+border: 3px solid var(--border-dark);
+cursor: pointer;
+text-decoration: none;
+text-transform: uppercase;
+box-shadow: 4px 4px 0 rgba(49, 24, 39, 0.7);
+transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn-primary {
+background-color: var(--pink-main);
+color: #fff;
+}
+
+.btn-secondary {
+background-color: #ffffff;
+color: var(--text-dark);
+}
+
+.btn:hover {
+transform: translate(-2px, -2px);
+box-shadow: 6px 6px 0 rgba(49, 24, 39, 0.8);
+}
+
+/* ------------------------------------------------------ */
+/* CHARACTER CUSTOMIZATION */
+/* ------------------------------------------------------ */
+
+.character-customization-interface {
+display: flex;
+justify-content: center;
+}
+
+.character-customization-panel {
+background-color: #fef9f3;
+border: 4px solid var(--border-dark);
+border-radius: 16px;
+padding: 1.5rem;
+box-shadow: 8px 8px 0 rgba(49, 24, 39, 0.8);
+position: relative;
+max-width: 360px;
+width: 100%;
+}
+
+.customization-header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-bottom: 1rem;
+}
+
+.customization-title {
+font-size: 12px;
+}
+
+.character-image-container {
+border-radius: 12px;
+border: 3px solid var(--border-dark);
+overflow: hidden;
+background-color: #0f172a;
+padding: 0.5rem;
+}
+
+.character-image {
+display: block;
+width: 100%;
+height: auto;
+image-rendering: pixelated;
+}
+
+/* ------------------------------------------------------ */
+/* SOBRE MÍ */
+/* ------------------------------------------------------ */
+
+.about-grid {
+display: grid;
+grid-template-columns: minmax(0, 1.3fr);
+gap: 2rem;
+}
+
+.about-map-wrapper {
+margin-top: 2rem;
+position: relative;
+display: inline-block;
+}
+
+.about-map {
+max-width: 100%;
+border-radius: 12px;
+border: 4px solid var(--border-dark);
+box-shadow: 8px 8px 0 rgba(49, 24, 39, 0.7);
+}
+
+.about-map-label {
+position: absolute;
+bottom: -1.5rem;
+left: 1rem;
+background-color: #fff7fb;
+border-radius: 8px;
+padding: 0.4rem 0.6rem;
+border: 3px solid var(--border-dark);
+font-size: 14px;
+box-shadow: 4px 4px 0 rgba(49, 24, 39, 0.7);
+}
+
+/* ------------------------------------------------------ */
+/* PROYECTOS – INVENTARIO RPG */
+/* ------------------------------------------------------ */
+
+#proyectos {
+background-color: var(--mauve-projects); /* #020617 */
+color: #e5e7eb;
+position: relative;
+border-block: 4px solid var(--border-dark);
+overflow: hidden;
+}
+
+/* Rejilla tipo inventario en el fondo */
+#proyectos::before {
+content: "";
+position: absolute;
+inset: 0;
+background-image:
+linear-gradient(
+to right,
+rgba(148, 163, 184, 0.25) 1px,
+transparent 1px
+),
+linear-gradient(
+to bottom,
+rgba(148, 163, 184, 0.25) 1px,
+transparent 1px
+);
+background-size: 64px 64px;
+opacity: 0.45;
+pointer-events: none;
+}
+
+/* viñeta suave para dar sensación de pantalla */
+#proyectos::after {
+content: "";
+position: absolute;
+inset: 0;
+background: radial-gradient(circle at center, transparent 0%, rgba(15, 23, 42, 0.85) 90%);
+opacity: 0.4;
+pointer-events: none;
+}
+
+#proyectos h2,
+#proyectos .section-intro {
+color: #e5e7eb;
+text-shadow:
+3px 3px 0px rgba(15, 23, 42, 0.9),
+-1px -1px 0px rgba(15, 23, 42, 0.7),
+1px -1px 0px rgba(15, 23, 42, 0.7),
+-1px 1px 0px rgba(15, 23, 42, 0.7);
+}
+
+/* Contenedor de las tarjetas como panel de inventario */
+
+.project-card-container {
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 2rem;
+margin-top: 2rem;
+flex-wrap: wrap;
+padding: 2.5rem 2.8rem;
+background: linear-gradient(135deg, #020617 0%, #0b1120 40%, #020617 100%);
+border-radius: 18px;
+border: 4px solid #0f172a;
+box-shadow: 10px 10px 0 #020617, 0 0 0 4px #e5e7eb;
+z-index: 1;
+}
+
+/* etiqueta INVENTORY arriba del panel */
+
+.project-card-container::before {
+content: "INVENTORY";
+position: absolute;
+top: -16px;
+left: 24px;
+padding: 0.25rem 0.6rem;
+font-family: "Press Start 2P", sans-serif;
+font-size: 9px;
+letter-spacing: 1px;
+background-color: #0f172a;
+color: #e5e7eb;
+border-radius: 6px;
+border: 3px solid #e5e7eb;
+box-shadow: 4px 4px 0 #020617;
+}
+
+/* pequeñas “orejitas” en las esquinas del panel */
+
+.project-card-container::after {
+content: "";
+position: absolute;
+inset: 0;
+border-radius: 18px;
+box-shadow:
+0 0 0 3px rgba(15, 23, 42, 0.6) inset,
+6px 6px 0 rgba(15, 23, 42, 0.7);
+pointer-events: none;
+}
+
+/* Tarjetas individuales */
+
+.project-card-image {
+max-width: 100%;
+width: auto;
+height: auto;
+max-height: 480px;
+image-rendering: pixelated;
+image-rendering: -moz-crisp-edges;
+image-rendering: crisp-edges;
+filter:
+drop-shadow(0px 0px 0px rgba(15, 23, 42, 1))
+drop-shadow(10px 10px 0px rgba(15, 23, 42, 0.8));
+transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Primera carta con rotación ligeramente hacia la izquierda */
+.project-card-1 {
+animation: cardFloat1 3s ease-in-out infinite;
+}
+
+/* Segunda carta con rotación ligeramente hacia la derecha */
+.project-card-2 {
+animation: cardFloat2 3s ease-in-out infinite;
+animation-delay: 0.5s;
+}
+
+/* Tercera carta "Coming soon" */
+.project-card-3 {
+animation: cardFloat3 3.4s ease-in-out infinite;
+animation-delay: 0.25s;
+}
+
+/* Hovers */
+
+.project-card-1:hover {
+transform: translateY(-8px) rotate(-2deg);
+filter:
+drop-shadow(0px 0px 0px rgba(15, 23, 42, 1))
+drop-shadow(14px 14px 0px rgba(15, 23, 42, 1));
+}
+
+.project-card-2:hover {
+transform: translateY(-8px) rotate(2deg);
+filter:
+drop-shadow(0px 0px 0px rgba(15, 23, 42, 1))
+drop-shadow(14px 14px 0px rgba(15, 23, 42, 1));
+}
+
+.project-card-3:hover {
+transform: translateY(-8px) rotate(-1deg);
+filter:
+drop-shadow(0px 0px 0px rgba(15, 23, 42, 1))
+drop-shadow(14px 14px 0px rgba(15, 23, 42, 1));
+}
+
+/* Animaciones flotantes */
+
+@keyframes cardFloat1 {
+0%,
+100% {
+transform: translateY(0) rotate(-2deg);
+}
+25% {
+transform: translateY(-6px) rotate(-1.5deg);
+}
+50% {
+transform: translateY(-3px) rotate(-2deg);
+}
+75% {
+transform: translateY(-8px) rotate(-2.5deg);
+}
+}
+
+@keyframes cardFloat2 {
+0%,
+100% {
+transform: translateY(0) rotate(2deg);
+}
+25% {
+transform: translateY(-6px) rotate(1.5deg);
+}
+50% {
+transform: translateY(-3px) rotate(2deg);
+}
+75% {
+transform: translateY(-8px) rotate(1.5deg);
+}
+}
+
+@keyframes cardFloat3 {
+0%,
+100% {
+transform: translateY(0) rotate(-1deg);
+}
+25% {
+transform: translateY(-5px) rotate(-0.5deg);
+}
+50% {
+transform: translateY(-2px) rotate(0deg);
+}
+75% {
+transform: translateY(-7px) rotate(-1.5deg);
+}
+}
+
+/* ------------------------------------------------------ */
+/* HABILIDADES */
+/* ------------------------------------------------------ */
+
+#habilidades {
+background-color: var(--pink-bg);
+}
+
+.skills-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+gap: 1.5rem;
+}
+
+.skills-card {
+background-color: var(--card-bg);
+border-radius: 16px;
+border: 4px solid var(--border-dark);
+padding: 1.5rem;
+box-shadow: var(--shadow-soft);
+}
+
+.skills-card h3 {
+font-size: 14px;
+margin-bottom: 0.75rem;
+}
+
+.skills-card ul {
+list-style: none;
+padding-left: 0;
+}
+
+.skills-card li::before {
+content: "▹";
+margin-right: 0.4rem;
+color: var(--pink-main);
+}
+
+.skills-icons {
+display: flex;
+flex-wrap: wrap;
+gap: 1rem;
+margin-top: 2rem;
+}
+
+.skills-icons img {
+height: 40px;
+filter: drop-shadow(3px 3px 0 rgba(63, 42, 60, 0.6));
+}
+
+/* ------------------------------------------------------ */
+/* FORMACIÓN */
+/* ------------------------------------------------------ */
+
+#formacion {
+background-color: var(--pink-alt);
+}
+
+.timeline {
+border-left: 4px solid var(--border-dark);
+margin-top: 2rem;
+padding-left: 1.5rem;
+position: relative;
+}
+
+.timeline::before {
+content: "";
+position: absolute;
+left: -10px;
+top: 0;
+bottom: 0;
+border-left: 2px dashed rgba(49, 24, 39, 0.4);
+}
+
+.timeline-item {
+position: relative;
+margin-bottom: 2rem;
+}
+
+.timeline-date {
+font-family: "Press Start 2P", sans-serif;
+font-size: 10px;
+margin-bottom: 0.5rem;
+color: var(--text-muted);
+}
+
+.timeline-content {
+background-color: var(--card-bg);
+border-radius: 12px;
+padding: 1rem 1.25rem;
+border: 4px solid var(--border-dark);
+box-shadow: 6px 6px 0 rgba(49, 24, 39, 0.7);
+}
+
+/* ------------------------------------------------------ */
+/* CONTACTO */
+/* ------------------------------------------------------ */
+
+.contact-card {
+background-color: #fff;
+border-radius: 12px;
+border: 4px solid var(--border-dark);
+padding: 1.5rem;
+box-shadow: 6px 6px 0 rgba(49, 24, 39, 0.8);
+max-width: 480px;
+}
+
+.contact-card ul {
+list-style: none;
+margin-top: 1rem;
+padding: 0;
+}
+
+.contact-card li + li {
+margin-top: 0.4rem;
+}
+
+.contact-card a {
+color: var(--pink-main);
+text-decoration: none;
+}
+
+/* ------------------------------------------------------ */
+/* FOOTER */
+/* ------------------------------------------------------ */
+
+.site-footer {
+padding-block: 1.5rem;
+border-top: 4px solid var(--border-dark);
+background-color: #fff7fb;
+text-align: center;
+}
+
+/* ------------------------------------------------------ */
+/* RESPONSIVE */
+/* ------------------------------------------------------ */
+
+@media (max-width: 900px) {
+.hero-grid {
+grid-template-columns: 1fr;
+}
+
+.hero-section {
+padding-top: 5rem;
+}
+
+.header-inner {
+flex-direction: column;
+align-items: flex-start;
+gap: 0.75rem;
+}
+
+.nav {
+justify-content: flex-start;
+}
+}
+
+@media (max-width: 600px) {
+.container {
+width: min(100% - 1.5rem, 100%);
+}
+
+h1 {
+font-size: 18px;
+}
+
+.hero-subtitle {
+font-size: 16px;
+}
+
+.skills-grid {
+grid-template-columns: 1fr;
+}
+
+.project-card-container {
+padding: 2rem 1.5rem;
+box-shadow: 8px 8px 0 #020617, 0 0 0 3px #e5e7eb;
+}
+}
