@@ -34,83 +34,97 @@
         </div>
     </header>
 
+    <!-- HERO -->
     <main>
-        <!-- HERO / INICIO -->
         <section id="inicio" class="hero-section">
-            <div class="container hero-profile-card">
+            <div class="container hero-grid">
 
-                <div class="hero-profile-header">
-                    <span class="hero-chip">Player 1 · Nat</span>
-                    <h1>Nat’s Character Sheet</h1>
+                <div class="hero-text">
+                    <div class="hero-chip">Player 1 · Nat</div>
+                    <h1>Hola, soy Nat 🌸</h1>
+                    <p class="hero-subtitle">
+                        Estudiante de Ciencia de Datos en el ITAM. Me gustan los proyectos
+                        donde los datos se conectan con historias, ciudades y personas.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#proyectos" class="btn btn-primary">Ver mis proyectos</a>
+                        <a href="#contacto" class="btn btn-secondary">Contactarme</a>
+                    </div>
                 </div>
 
-                <div class="hero-profile-grid">
-                    <!-- LADO IZQUIERDO: AVATAR + STATS -->
-                    <div class="hero-profile-left">
-                        <div class="hero-avatar-frame">
-                            <img src="assets/character-portrait.png" alt="Pixel avatar de Nat"
-                                class="hero-avatar-img" />
+                <div class="character-customization-interface">
+                    <!-- Panel: Character Sheet -->
+                    <div class="character-customization-panel">
+                        <div class="customization-header">
+                            <h2 class="customization-title">Character Profile</h2>
                         </div>
 
-                        <div class="hero-stat">
-                            <span class="hero-stat-label">Class</span>
-                            <span class="hero-stat-value">Data storyteller</span>
-                        </div>
-
-                        <div class="hero-stat">
-                            <span class="hero-stat-label">Current quest</span>
-                            <span class="hero-stat-value">Convertir datos en historias útiles</span>
-                        </div>
-
-                        <div class="hero-stat">
-                            <span class="hero-stat-label">Location</span>
-                            <span class="hero-stat-value">CDMX · ITAM</span>
-                        </div>
-                    </div>
-
-                    <!-- LADO DERECHO: BIO + LOVES & HATES -->
-                    <div class="hero-profile-right">
-                        <div class="hero-section-box">
-                            <div class="hero-section-banner">Biography</div>
-                            <p>
-                                Soy Nat, estudiante de Ciencia de Datos en el ITAM. Me gustan los proyectos
-                                donde los datos se conectan con ciudades, deporte y personas reales.
-                                Creo que detrás de cada registro hay una historia que vale la pena escuchar.
-                            </p>
-                        </div>
-
-                        <div class="hero-section-box">
-                            <div class="hero-section-banner">Loves & Hates</div>
-
-                            <div class="hero-loves-hates-grid">
-                                <div class="hero-loves">
-                                    <div class="hero-pill-title">Loves</div>
-                                    <ul>
-                                        <li>Datos de deporte y rendimiento</li>
-                                        <li>Visualizaciones claras y bonitas</li>
-                                        <li>Proyectos con impacto social</li>
-                                        <li>Retos de mates y probabilidad</li>
-                                    </ul>
+                        <div class="character-panel-grid">
+                            <!-- LADO IZQUIERDO: personaje + quest + mascota -->
+                            <div class="character-left">
+                                <div class="character-image-container">
+                                    <img src="assets/character-portrait.png" alt="Character portrait"
+                                        class="character-image" />
                                 </div>
 
-                                <div class="hero-hates">
-                                    <div class="hero-pill-title">Avoids</div>
-                                    <ul>
-                                        <li>Datos sucios sin contexto</li>
-                                        <li>Dashboards que nadie entiende</li>
-                                        <li>Modelos sin interpretar</li>
-                                        <li>Decisiones sin evidencia</li>
-                                    </ul>
+                                <div class="character-stat-box">
+                                    <div class="character-stat-label">Current quest</div>
+                                    <div class="character-stat-text">
+                                        Convertir datos en historias que sí le sirvan a la gente.
+                                    </div>
+                                </div>
+
+                                <div class="pet-slot">
+                                    <div class="pet-label">Companion</div>
+                                    <div class="pet-frame">
+                                        <!-- aquí luego pones la imagen de tu mascota -->
+                                        <img src="assets/pet-placeholder.png" alt="Mascota de Nat" class="pet-image" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- LADO DERECHO: Likes + Saved spots -->
+                            <div class="character-right">
+                                <!-- Sección LIKES -->
+                                <div class="character-section">
+                                    <div class="character-section-title">Likes</div>
+                                    <p class="character-section-description">
+                                        Comidas que me hacen feliz y que definitivamente pediría
+                                        después de analizar un buen dataset.
+                                    </p>
+
+                                    <div class="likes-grid">
+                                        <div class="like-slot">
+                                            <img src="assets/like-food-1.png" alt="Comida favorita 1">
+                                        </div>
+                                        <div class="like-slot">
+                                            <img src="assets/like-food-2.png" alt="Comida favorita 2">
+                                        </div>
+                                        <div class="like-slot">
+                                            <img src="assets/like-food-3.png" alt="Comida favorita 3">
+                                        </div>
+                                        <div class="like-slot">
+                                            <img src="assets/like-food-4.png" alt="Comida favorita 4">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Sección SAVED SPOTS -->
+                                <div class="character-section">
+                                    <div class="character-section-title">Saved spots</div>
+                                    <p class="character-section-description">
+                                        Lugares que he desbloqueado a lo largo de mi aventura.
+                                        Cada uno guarda una historia o un recuerdo especial.
+                                    </p>
+
+                                    <div class="saved-spots-map">
+                                        <img src="assets/saved-spots-map.png" alt="Mapa pixel de mis lugares guardados">
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="hero-footer-row">
-                            <div class="hero-birthday-box">
-                                <span class="hero-stat-label">Birthday</span>
-                                <span class="hero-stat-value">04 · 03 · Aries season ✨</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
