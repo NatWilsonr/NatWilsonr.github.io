@@ -549,6 +549,52 @@ img {
     justify-content: center;
 }
 
+/* Contenedor para la tarjeta del proyecto */
+.project-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.project-card-image {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    max-height: 500px;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    filter: drop-shadow(8px 8px 0px rgba(63, 42, 60, 0.4)) drop-shadow(16px 16px 20px rgba(0, 0, 0, 0.3));
+    animation: cardFloat 3s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+.project-card-image:hover {
+    transform: translateY(-8px);
+    filter: drop-shadow(12px 12px 0px rgba(63, 42, 60, 0.5)) drop-shadow(20px 20px 25px rgba(0, 0, 0, 0.4));
+}
+
+@keyframes cardFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-6px) rotate(0.5deg);
+    }
+
+    50% {
+        transform: translateY(-3px) rotate(0deg);
+    }
+
+    75% {
+        transform: translateY(-8px) rotate(-0.5deg);
+    }
+}
+
 .polaroid {
     background: #fef9f3;
     width: 100%;
