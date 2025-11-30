@@ -35,35 +35,106 @@ body {
 }
 
 /* ------------------------------------------------------ */
-/* HEADER */
+/* HEADER — versión original restaurada */
 /* ------------------------------------------------------ */
 
 .site-header {
     position: sticky;
     top: 0;
-    background: rgba(255, 247, 251, 0.96);
-    border-bottom: 4px solid var(--border-dark);
-    z-index: 100;
+    z-index: 50;
+    background: #fff7fb;
+    backdrop-filter: blur(6px);
+    border-bottom: 4px solid #311827;
+    box-shadow: 0 4px 0 rgba(49, 24, 39, 0.4);
 }
 
 .header-inner {
     display: flex;
-    justify-content: space-between;
-    padding: 1rem 0;
     align-items: center;
+    justify-content: space-between;
+    padding-block: 1rem;
+}
+
+/* LOGO */
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-pixel-heart {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(90deg, #fb7185 0%, #f97373 50%, #f97373 100%);
+    clip-path: polygon(50% 0%,
+            61% 5%,
+            72% 13%,
+            80% 24%,
+            84% 36%,
+            83% 49%,
+            78% 60%,
+            68% 71%,
+            50% 86%,
+            32% 71%,
+            22% 60%,
+            17% 49%,
+            16% 36%,
+            20% 24%,
+            28% 13%,
+            39% 5%);
+    box-shadow: 3px 3px 0 rgba(49, 24, 39, 0.7);
+    image-rendering: pixelated;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.logo-title {
+    font-family: "Press Start 2P", sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.logo-subtitle {
+    font-size: 14px;
+    color: #9b6b8b;
+}
+
+/* NAV */
+
+.nav {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 .nav a {
-    font-family: "Press Start 2P";
+    font-family: "Press Start 2P", sans-serif;
     font-size: 10px;
-    padding: 0.4rem 0.7rem;
     text-decoration: none;
-    color: var(--text-dark);
+    color: #3f2a3c;
+    padding: 0.4rem 0.7rem;
     border-radius: 6px;
-    background: white;
     border: 2px solid transparent;
+    background-color: #ffffff;
     box-shadow: 4px 4px 0 rgba(49, 24, 39, 0.4);
+    transition: all 0.1s ease;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.3);
 }
+
+.nav a:hover {
+    background-color: #f9a8d4;
+    border: 2px solid #3f2a3c;
+    box-shadow: 6px 6px 0 rgba(49, 24, 39, 0.8);
+    text-decoration: none;
+}
+
 
 /* ------------------------------------------------------ */
 /* CONTENEDOR */
