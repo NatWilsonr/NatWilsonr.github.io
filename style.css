@@ -14,6 +14,10 @@
     --card-bg: #ffffff;
     --shadow-soft: 0 8px 20px rgba(244, 114, 182, 0.2);
     --shadow-strong: 0 12px 32px rgba(244, 114, 182, 0.32);
+    /* Sombras pixel art */
+    --pixel-shadow: 4px 4px 0px rgba(63, 42, 60, 0.3);
+    --pixel-shadow-hover: 6px 6px 0px rgba(63, 42, 60, 0.4);
+    --pixel-border: 3px solid var(--text-dark);
 }
 
 /* ------------------------------------------------------ */
@@ -28,11 +32,20 @@
 
 body {
     margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
+    font-family: "VT323", monospace;
     background-color: var(--pink-bg);
     color: var(--text-dark);
     line-height: 1.6;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    font-size: 20px;
+}
+
+/* Efecto de pixelación global */
+* {
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
 }
 
 a {
@@ -42,6 +55,13 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/* Efecto pixel art en imágenes */
+img {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
 }
 
 .container {
@@ -58,9 +78,9 @@ a:hover {
     position: sticky;
     top: 0;
     z-index: 10;
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 247, 251, 0.9);
-    border-bottom: 1px solid rgba(244, 114, 182, 0.1);
+    background-color: var(--pink-bg);
+    border-bottom: var(--pixel-border);
+    box-shadow: 0 4px 0px rgba(63, 42, 60, 0.2);
 }
 
 .nav-container {
@@ -71,13 +91,28 @@ a:hover {
 }
 
 .logo {
-    font-weight: 700;
+    font-family: "Press Start 2P", monospace;
+    font-weight: 400;
     color: var(--pink-main);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .nav a {
     margin-left: 1rem;
-    font-size: 0.95rem;
+    font-size: 18px;
+    padding: 4px 8px;
+    border: 2px solid transparent;
+    transition: all 0.1s ease;
+    text-transform: uppercase;
+}
+
+.nav a:hover {
+    background-color: var(--pink-soft);
+    border: 2px solid var(--text-dark);
+    box-shadow: var(--pixel-shadow);
+    text-decoration: none;
 }
 
 /* ------------------------------------------------------ */
@@ -93,14 +128,19 @@ a:hover {
 }
 
 .section h2 {
-    font-size: 1.8rem;
+    font-family: "Press Start 2P", monospace;
+    font-size: 1.4rem;
     margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.8;
 }
 
 .section-intro {
     color: var(--text-muted);
     max-width: 36rem;
     margin-bottom: 2rem;
+    font-size: 18px;
 }
 
 /* ------------------------------------------------------ */
@@ -119,22 +159,29 @@ a:hover {
 }
 
 .hero-kicker {
+    font-family: "Press Start 2P", monospace;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    font-size: 0.8rem;
+    font-size: 10px;
     color: var(--text-muted);
     margin-bottom: 0.5rem;
+    line-height: 1.6;
 }
 
 .hero h1 {
-    font-size: clamp(2rem, 4.2vw, 2.8rem);
+    font-family: "Press Start 2P", monospace;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
     margin: 0 0 1rem;
+    line-height: 1.6;
+    text-transform: uppercase;
 }
 
 .hero-subtitle {
     max-width: 32rem;
     color: var(--text-muted);
     margin-bottom: 1.8rem;
+    font-size: 22px;
+    line-height: 1.5;
 }
 
 .hero-actions .btn {
@@ -151,34 +198,38 @@ a:hover {
 .hero-polaroid {
     background: var(--card-bg);
     padding: 1.1rem 1.1rem 1.6rem;
-    border-radius: 18px;
-    box-shadow: var(--shadow-soft);
+    border: var(--pixel-border);
+    box-shadow: var(--pixel-shadow);
     text-align: center;
     max-width: 260px;
     transform: rotate(-3deg);
+    image-rendering: pixelated;
 }
 
 .hero-polaroid-img {
     background: var(--pink-alt);
-    border-radius: 12px;
+    border: 2px solid var(--text-dark);
     height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    image-rendering: pixelated;
 }
 
 .hero-polaroid-photo {
     width: 90%;
     height: auto;
     object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 2px solid var(--text-dark);
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
 }
 
 .hero-caption {
     margin-top: 0.8rem;
-    font-size: 0.9rem;
+    font-size: 16px;
     color: var(--text-muted);
 }
 
@@ -225,32 +276,50 @@ a:hover {
 .btn {
     display: inline-block;
     padding: 0.6rem 1.3rem;
-    border-radius: 999px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    border: 1px solid transparent;
+    border: var(--pixel-border);
+    font-size: 18px;
+    font-weight: 400;
     cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.1s ease;
+    font-family: "VT323", monospace;
+    position: relative;
+    background-color: var(--card-bg);
 }
 
 .btn-primary {
     background-color: var(--pink-main);
     color: white;
-    box-shadow: var(--shadow-soft);
+    box-shadow: var(--pixel-shadow);
+    border: var(--pixel-border);
 }
 
 .btn-primary:hover {
-    filter: brightness(1.05);
-    box-shadow: var(--shadow-strong);
+    transform: translate(-2px, -2px);
+    box-shadow: var(--pixel-shadow-hover);
+}
+
+.btn-primary:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px rgba(63, 42, 60, 0.3);
 }
 
 .btn-secondary {
     background-color: white;
     color: var(--text-dark);
-    border-color: #fbcfe8;
+    border: var(--pixel-border);
+    box-shadow: var(--pixel-shadow);
 }
 
 .btn-secondary:hover {
-    background-color: #fdf2f8;
+    background-color: var(--pink-alt);
+    transform: translate(-2px, -2px);
+    box-shadow: var(--pixel-shadow-hover);
+}
+
+.btn-secondary:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px rgba(63, 42, 60, 0.3);
 }
 
 /* ------------------------------------------------------ */
@@ -267,10 +336,12 @@ a:hover {
 
 .about-content p {
     margin-bottom: 0.6rem;
+    font-size: 18px;
 }
 
 .about-travel {
     color: var(--text-muted);
+    font-size: 18px;
 }
 
 /* Mapa + etiqueta flotante */
@@ -281,8 +352,11 @@ a:hover {
 
 .about-map {
     width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border: var(--pixel-border);
+    box-shadow: var(--pixel-shadow);
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
 }
 
 .about-map-label {
@@ -290,12 +364,12 @@ a:hover {
     left: 50%;
     bottom: 0.9rem;
     transform: translateX(-50%);
-    background: rgba(255, 247, 251, 0.95);
+    background: var(--pink-bg);
     color: var(--text-dark);
     padding: 0.4rem 0.9rem;
-    border-radius: 999px;
-    font-size: 0.85rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    border: var(--pixel-border);
+    font-size: 16px;
+    box-shadow: var(--pixel-shadow);
 }
 
 /* ------------------------------------------------------ */
@@ -325,11 +399,11 @@ a:hover {
     max-width: 240px;
     padding: 12px;
     padding-bottom: 32px;
-    border-radius: 10px;
-    box-shadow: var(--shadow-soft);
+    border: var(--pixel-border);
+    box-shadow: var(--pixel-shadow);
     position: relative;
     text-align: center;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
 /* Imagen polaroid */
@@ -337,7 +411,7 @@ a:hover {
     width: 100%;
     height: 160px;
     background: var(--pink-alt);
-    border-radius: 6px;
+    border: 2px solid var(--text-dark);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -349,20 +423,32 @@ a:hover {
 
 .polaroid h3 {
     margin: 0.7rem 0 0.3rem;
-    font-size: 1.05rem;
+    font-size: 18px;
     color: var(--pink-main);
-    font-weight: 600;
+    font-weight: 400;
+    font-family: "Press Start 2P", monospace;
+    text-transform: uppercase;
+    line-height: 1.5;
 }
 
 .polaroid-link {
     display: inline-block;
     margin-top: 0.4rem;
-    font-size: 0.85rem;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 400;
     color: var(--text-dark);
     background: #ffe4f3;
     padding: 0.25rem 0.7rem;
-    border-radius: 999px;
+    border: 2px solid var(--text-dark);
+    text-transform: uppercase;
+    box-shadow: 2px 2px 0px rgba(63, 42, 60, 0.2);
+    transition: all 0.1s ease;
+}
+
+.polaroid-link:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0px rgba(63, 42, 60, 0.3);
+    text-decoration: none;
 }
 
 #proyectos .polaroid-link {
@@ -387,8 +473,8 @@ a:hover {
 }
 
 .polaroid:hover {
-    transform: translateY(-6px) rotate(2deg);
-    box-shadow: var(--shadow-strong);
+    transform: translateY(-4px) rotate(2deg);
+    box-shadow: var(--pixel-shadow-hover);
 }
 
 /* Popup */
@@ -397,10 +483,10 @@ a:hover {
     inset: 10px;
     background: #ffffff;
     color: var(--text-dark);
-    border-radius: 12px;
+    border: var(--pixel-border);
     padding: 0.75rem 0.9rem;
-    font-size: 0.85rem;
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+    font-size: 16px;
+    box-shadow: var(--pixel-shadow-hover);
     opacity: 0;
     pointer-events: none;
     transform: translateY(6px);
@@ -415,7 +501,7 @@ a:hover {
 .popup-meta {
     margin-top: 0.4rem;
     color: var(--text-muted);
-    font-size: 0.8rem;
+    font-size: 14px;
 }
 
 /* ------------------------------------------------------ */
@@ -423,7 +509,7 @@ a:hover {
 /* ------------------------------------------------------ */
 
 #habilidades h2 .gear {
-    font-size: 1.3em;
+    font-size: 1em;
     margin-left: 0.2rem;
 }
 
@@ -435,6 +521,14 @@ a:hover {
 
 .skill-column ul {
     padding-left: 1.1rem;
+    font-size: 18px;
+}
+
+.skill-column h3 {
+    font-family: "Press Start 2P", monospace;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
 }
 
 /* Logos */
@@ -448,11 +542,14 @@ a:hover {
 .skills-icons img {
     height: 32px;
     width: auto;
-    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15));
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    filter: drop-shadow(2px 2px 0px rgba(63, 42, 60, 0.2));
 }
 
 /* ------------------------------------------------------ */
-/* FORMACIÓN – estilo doodle */
+/* FORMACIÓN – estilo pixel art */
 /* ------------------------------------------------------ */
 
 #formacion {
@@ -462,6 +559,7 @@ a:hover {
 .formacion-intro {
     max-width: 38rem;
     color: var(--text-muted);
+    font-size: 18px;
 }
 
 .courses-row {
@@ -471,28 +569,24 @@ a:hover {
     margin-top: 1.4rem;
 }
 
-/* Burbuja estilo doodle */
+/* Burbuja estilo pixel art */
 .course-bubble {
     position: relative;
     background: #f7cfa4;
     color: var(--text-dark);
-    border-radius: 999px;
     padding: 0.45rem 1.3rem;
-    font-size: 0.9rem;
-    border: 2px solid #3f2a3c;
-    box-shadow: 4px 5px 0 rgba(0, 0, 0, 0.18);
+    font-size: 18px;
+    border: var(--pixel-border);
+    box-shadow: var(--pixel-shadow);
+    text-transform: uppercase;
+    transition: all 0.1s ease;
 }
 
-/* Sombra desplazada */
-.course-bubble::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: rgba(0, 0, 0, 0.05);
-    transform: translate(3px, 4px);
-    z-index: -1;
+.course-bubble:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--pixel-shadow-hover);
 }
+
 
 /* ------------------------------------------------------ */
 /* CONTACTO */
@@ -501,10 +595,25 @@ a:hover {
 .contact-list {
     list-style: none;
     padding-left: 0;
+    font-size: 18px;
 }
 
 .contact-list li {
     margin-bottom: 0.5rem;
+}
+
+.contact-list a {
+    border-bottom: 2px solid var(--pink-main);
+    padding-bottom: 2px;
+    transition: all 0.1s ease;
+}
+
+.contact-list a:hover {
+    background-color: var(--pink-soft);
+    padding: 2px 4px;
+    border: 2px solid var(--text-dark);
+    box-shadow: var(--pixel-shadow);
+    text-decoration: none;
 }
 
 /* ------------------------------------------------------ */
@@ -513,8 +622,8 @@ a:hover {
 
 .site-footer {
     padding: 1.5rem 0;
-    border-top: 1px solid rgba(244, 114, 182, 0.2);
-    font-size: 0.9rem;
+    border-top: var(--pixel-border);
+    font-size: 16px;
     color: var(--text-muted);
     text-align: center;
 }
