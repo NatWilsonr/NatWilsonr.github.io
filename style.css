@@ -76,14 +76,84 @@ body {
 }
 
 /* ------------------------------------------------------ */
-/* HERO */
+/* HERO — versión original restaurada */
 /* ------------------------------------------------------ */
+
+.hero-section {
+    padding-block: 4rem 2rem;
+}
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
     gap: 3rem;
+    align-items: center;
 }
+
+.hero-text h1 {
+    font-family: "Press Start 2P", sans-serif;
+    font-size: 22px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    margin-bottom: 1.5rem;
+    max-width: 520px;
+    font-size: 18px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.character-customization-interface {
+    display: flex;
+    justify-content: center;
+}
+
+.character-customization-panel {
+    background-color: #fef9f3;
+    border: 4px solid #311827;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 8px 8px 0 rgba(49, 24, 39, 0.8);
+    position: relative;
+    max-width: 360px;
+    width: 100%;
+}
+
+.customization-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.customization-title {
+    font-family: "Press Start 2P", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.character-image-container {
+    border-radius: 12px;
+    border: 3px solid #311827;
+    overflow: hidden;
+    background-color: #0f172a;
+    padding: 0.5rem;
+}
+
+.character-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
 
 /* ------------------------------------------------------ */
 /* SOBRE MÍ */
