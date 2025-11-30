@@ -549,12 +549,14 @@ img {
     justify-content: center;
 }
 
-/* Contenedor para la tarjeta del proyecto */
+/* Contenedor para las tarjetas del proyecto */
 .project-card-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
     margin-top: 2rem;
+    flex-wrap: wrap;
 }
 
 .project-card-image {
@@ -570,28 +572,64 @@ img {
     transition: transform 0.3s ease;
 }
 
-.project-card-image:hover {
-    transform: translateY(-8px);
+/* Primera carta con rotación ligeramente hacia la izquierda */
+.project-card-1 {
+    animation: cardFloat1 3s ease-in-out infinite;
+}
+
+/* Segunda carta con rotación ligeramente hacia la derecha */
+.project-card-2 {
+    animation: cardFloat2 3s ease-in-out infinite;
+    animation-delay: 0.5s;
+}
+
+.project-card-1:hover {
+    transform: translateY(-8px) rotate(-2deg) !important;
     filter: drop-shadow(12px 12px 0px rgba(63, 42, 60, 0.5)) drop-shadow(20px 20px 25px rgba(0, 0, 0, 0.4));
 }
 
-@keyframes cardFloat {
+.project-card-2:hover {
+    transform: translateY(-8px) rotate(2deg) !important;
+    filter: drop-shadow(12px 12px 0px rgba(63, 42, 60, 0.5)) drop-shadow(20px 20px 25px rgba(0, 0, 0, 0.4));
+}
+
+@keyframes cardFloat1 {
 
     0%,
     100% {
-        transform: translateY(0) rotate(0deg);
+        transform: translateY(0) rotate(-2deg);
     }
 
     25% {
-        transform: translateY(-6px) rotate(0.5deg);
+        transform: translateY(-6px) rotate(-1.5deg);
     }
 
     50% {
-        transform: translateY(-3px) rotate(0deg);
+        transform: translateY(-3px) rotate(-2deg);
     }
 
     75% {
-        transform: translateY(-8px) rotate(-0.5deg);
+        transform: translateY(-8px) rotate(-2.5deg);
+    }
+}
+
+@keyframes cardFloat2 {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(2deg);
+    }
+
+    25% {
+        transform: translateY(-6px) rotate(2.5deg);
+    }
+
+    50% {
+        transform: translateY(-3px) rotate(2deg);
+    }
+
+    75% {
+        transform: translateY(-8px) rotate(1.5deg);
     }
 }
 
