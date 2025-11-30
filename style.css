@@ -255,9 +255,8 @@ img {
 
 /* Interfaz de personalización de personaje */
 .character-customization-interface {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    display: flex;
+    justify-content: center;
     align-items: start;
 }
 
@@ -306,6 +305,25 @@ img {
     text-shadow: 2px 2px 0px rgba(63, 42, 60, 0.3), -1px -1px 0px rgba(63, 42, 60, 0.3);
     margin: 0;
     line-height: 1.4;
+}
+
+.character-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    position: relative;
+    z-index: 2;
+    min-height: 250px;
+}
+
+.character-image {
+    max-width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    filter: drop-shadow(3px 3px 0px rgba(63, 42, 60, 0.3));
 }
 
 .character-sprite-area {
@@ -359,102 +377,6 @@ img {
     margin-bottom: -10px;
 }
 
-/* Panel derecho: Character Portrait */
-.character-portrait-panel {
-    position: relative;
-}
-
-.character-portrait-frame {
-    background: #ffffff;
-    border: 5px solid var(--text-dark);
-    box-shadow: var(--pixel-shadow);
-    padding: 12px;
-    position: relative;
-    border-radius: 4px;
-}
-
-.character-portrait-frame::before {
-    content: "";
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    right: 8px;
-    bottom: 8px;
-    border: 2px solid rgba(255, 255, 255, 0.9);
-    border-radius: 2px;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.character-heart-icon {
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    font-size: 1.8rem;
-    z-index: 15;
-    filter: drop-shadow(2px 2px 0px rgba(63, 42, 60, 0.3));
-    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);
-}
-
-.character-portrait-bg {
-    background: linear-gradient(135deg, #b3d9ff 0%, #99ccff 100%);
-    border: 3px solid var(--text-dark);
-    position: relative;
-    min-height: 300px;
-    overflow: hidden;
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
-}
-
-.character-portrait-bg::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image:
-        repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255, 255, 255, 0.1) 20px, rgba(255, 255, 255, 0.1) 21px);
-    pointer-events: none;
-    z-index: 1;
-}
-
-.character-photo-container {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px;
-    z-index: 2;
-}
-
-.character-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border: 2px solid var(--text-dark);
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
-    filter: contrast(1.1) brightness(0.95);
-}
-
-.hero-caption {
-    margin-top: 0.8rem;
-    font-size: 18px;
-    color: var(--text-muted);
-    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.2);
-    font-family: "Press Start 2P", monospace;
-    text-transform: uppercase;
-    font-size: 10px;
-    letter-spacing: 1px;
-    text-align: center;
-}
 
 /* Stickers flotantes */
 .floating-sticker {
@@ -1097,17 +1019,7 @@ img {
     }
 
     .character-customization-interface {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
         margin-top: 2rem;
-    }
-
-    .character-customization-panel {
-        order: 2;
-    }
-
-    .character-portrait-panel {
-        order: 1;
     }
 
     .character-emoji {
