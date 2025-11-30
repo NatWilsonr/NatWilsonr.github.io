@@ -182,8 +182,7 @@ body {
 }
 
 .character-customization-interface {
-    display: flex;
-    justify-content: center;
+    width: 100%;
 }
 
 .character-customization-panel {
