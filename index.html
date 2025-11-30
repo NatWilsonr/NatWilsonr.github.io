@@ -14,8 +14,15 @@
 <body>
     <!-- HEADER -->
     <header class="site-header">
-        <div class="container nav-container">
-            <div class="logo">Nat Wilson</div>
+        <div class="container header-inner">
+            <div class="logo-area">
+                <div class="logo-pixel-heart"></div>
+                <div class="logo-text">
+                    <span class="logo-title">Nat Wilson</span>
+                    <span class="logo-subtitle">Data & stories player</span>
+                </div>
+            </div>
+
             <nav class="nav">
                 <a href="#inicio">Inicio</a>
                 <a href="#sobre-mi">Sobre mí</a>
@@ -28,13 +35,12 @@
     </header>
 
     <main>
-
-        <!-- HERO -->
-        <section id="inicio" class="section hero">
-            <div class="container hero-content">
+        <!-- HERO / INICIO -->
+        <section id="inicio" class="hero-section">
+            <div class="container hero-grid">
 
                 <div class="hero-text">
-                    <p class="hero-kicker">Bienvenida a mi rinconcito pastel de internet</p>
+                    <div class="hero-chip">Player 1 · Nat</div>
                     <h1>Hola, soy Nat 🌸</h1>
                     <p class="hero-subtitle">
                         Estudiante de Ciencia de Datos en el ITAM. Me gustan los proyectos
@@ -64,18 +70,19 @@
 
         <!-- SOBRE MÍ -->
         <section id="sobre-mi" class="section">
-            <div class="container">
-                <h2>Sobre mí</h2>
-
-                <div class="about-content">
+            <div class="container about-grid">
+                <div class="about-text">
+                    <h2>Sobre mí</h2>
                     <p>
-                        Soy estudiante de Ciencia de Datos y me interesa combinar herramientas
-                        cuantitativas con problemas reales: transporte, seguridad, políticas
-                        públicas y proyectos con impacto social. Me gusta documentar bien mis
-                        procesos, trabajar en equipo y aprender tecnologías nuevas que me
-                        permitan contar mejores historias con datos.
+                        Soy estudiante de Ciencia de Datos en el ITAM y me gusta pensar que
+                        los datos no son solo números: detrás de cada fila hay personas, historias
+                        y decisiones importantes.
                     </p>
-
+                    <p>
+                        Me interesa trabajar con proyectos que mezclen ciudades, movilidad, políticas públicas
+                        y justicia social. Disfruto mucho entender cómo funcionan los sistemas y encontrar patrones
+                        que puedan mejorar la vida de las personas.
+                    </p>
                     <p class="about-travel">
                         He tenido la oportunidad de vivir y aprender en diferentes lugares, y
                         eso me ha enseñado a adaptarme, observar con curiosidad y disfrutar
@@ -91,7 +98,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -110,6 +116,8 @@
                         class="project-card-image project-card-1" />
                     <img src="assets/gender-violence-card.png" alt="Gender Violence Card"
                         class="project-card-image project-card-2" />
+                    <img src="assets/coming-soon-card.png" alt="Coming Soon Card"
+                        class="project-card-image project-card-3" />
                 </div>
 
             </div>
@@ -118,29 +126,35 @@
         <!-- HABILIDADES -->
         <section id="habilidades" class="section">
             <div class="container">
-                <h2>Habilidades <span class="gear">⚙️</span></h2>
+                <h2>Habilidades</h2>
+                <p class="section-intro">
+                    Un mix entre herramientas técnicas y cosas que me gusta aprender todo el tiempo.
+                </p>
 
                 <div class="skills-grid">
-                    <div class="skill-column">
-                        <h3>Lenguajes</h3>
+                    <div class="skills-card">
+                        <h3>Lenguajes y herramientas</h3>
                         <ul>
-                            <li>Python</li>
-                            <li>R</li>
-                            <li>SQL</li>
+                            <li>Python (pandas, matplotlib, scikit-learn)</li>
+                            <li>R para análisis estadístico</li>
+                            <li>SQL y bases de datos relacionales</li>
+                            <li>Git y GitHub</li>
+                            <li>Tableau / visualización de datos</li>
                         </ul>
                     </div>
 
-                    <div class="skill-column">
-                        <h3>Herramientas</h3>
+                    <div class="skills-card">
+                        <h3>En lo que quiero seguir creciendo</h3>
                         <ul>
-                            <li>Git & GitHub</li>
-                            <li>PostgreSQL</li>
-                            <li>Tableau / Power BI</li>
+                            <li>Machine Learning aplicado a problemas reales</li>
+                            <li>Ingeniería de datos y pipelines</li>
+                            <li>Comunicación de resultados para personas no técnicas</li>
+                            <li>Diseño de dashboards claros y bonitos</li>
                         </ul>
                     </div>
 
-                    <div class="skill-column">
-                        <h3>Intereses</h3>
+                    <div class="skills-card">
+                        <h3>Temas que me emocionan</h3>
                         <ul>
                             <li>Analítica de datos</li>
                             <li>Políticas públicas</li>
@@ -149,35 +163,42 @@
                     </div>
                 </div>
 
-                <!-- Luego reemplazamos con tus logos reales -->
+                <!-- Logos de skills -->
                 <div class="skills-icons">
                     <img src="assets/skills/python.svg" alt="Python" />
                     <img src="assets/skills/r.svg" alt="R" />
                     <img src="assets/skills/sql.svg" alt="SQL" />
                     <img src="assets/skills/git.svg" alt="Git" />
                     <img src="assets/skills/postgresql.svg" alt="PostgreSQL" />
-                    <img src="assets/skills/tableau.svg" alt="Tableau" />
                 </div>
             </div>
         </section>
 
         <!-- FORMACIÓN -->
-        <section id="formacion" class="section">
+        <section id="formacion" class="section section-alt">
             <div class="container">
                 <h2>Formación</h2>
-
-                <p class="formacion-intro">
-                    Actualmente estudio la Licenciatura en Ciencia de Datos en el ITAM.
-                    Me interesan especialmente los cursos que combinan matemáticas,
-                    programación y aplicaciones a problemas reales.
+                <p class="section-intro">
+                    Un poco de mi camino académico y las etapas que han ido definiendo lo que me gusta estudiar.
                 </p>
 
-                <div class="courses-row">
-                    <div class="course-bubble">Probabilidad</div>
-                    <div class="course-bubble">Bases de Datos</div>
-                    <div class="course-bubble">Fuentes de Datos</div>
-                    <div class="course-bubble">Machine Learning</div>
-                    <div class="course-bubble">Econometría</div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022 - Actual</div>
+                        <div class="timeline-content">
+                            <h3>Licenciatura en Ciencia de Datos</h3>
+                            <p>Instituto Tecnológico Autónomo de México (ITAM)</p>
+                            <p>Enfoque en probabilidad, estadística, programación y métodos cuantitativos.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Intercambio (planeado)</div>
+                        <div class="timeline-content">
+                            <h3>Estudios en el extranjero</h3>
+                            <p>Interés en tomar cursos de data science, econometría y temas aplicados en Europa.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -186,16 +207,18 @@
         <section id="contacto" class="section">
             <div class="container">
                 <h2>Contacto</h2>
-                <p>
-                    Si te interesa colaborar en un proyecto, platicar sobre ideas o tienes
-                    alguna duda, puedes contactarme aquí:
+                <p class="section-intro">
+                    Si quieres platicar sobre proyectos, datos, ciudades o solo saludar, puedes escribir aquí:
                 </p>
 
-                <ul class="contact-list">
-                    <li>Email: <a href="mailto:tu.correo@ejemplo.com">tu.correo@ejemplo.com</a></li>
-                    <li>LinkedIn: <a href="#" target="_blank">Mi perfil de LinkedIn</a></li>
-                    <li>GitHub: <a href="https://github.com/NatWilsonr" target="_blank">NatWilsonr</a></li>
-                </ul>
+                <div class="contact-card">
+                    <p>Puedes encontrarme en:</p>
+                    <ul>
+                        <li>Email: <a href="mailto:tu.correo@ejemplo.com">tu.correo@ejemplo.com</a></li>
+                        <li>LinkedIn: <a href="#" target="_blank">Mi perfil de LinkedIn</a></li>
+                        <li>GitHub: <a href="https://github.com/NatWilsonr" target="_blank">NatWilsonr</a></li>
+                    </ul>
+                </div>
             </div>
         </section>
 
