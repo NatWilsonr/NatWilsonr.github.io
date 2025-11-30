@@ -214,9 +214,9 @@ img {
 
 .hero-content {
     display: grid;
-    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.8fr);
     gap: 2rem;
-    align-items: center;
+    align-items: start;
 }
 
 .hero-kicker {
@@ -253,17 +253,114 @@ img {
     margin-right: 0.8rem;
 }
 
-.hero-side {
+/* Interfaz de personalización de personaje */
+.character-customization-interface {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+/* Panel izquierdo: Character Customization */
+.character-customization-panel {
+    background: var(--pink-alt);
+    border: 5px solid var(--text-dark);
+    box-shadow: var(--pixel-shadow);
+    padding: 1.5rem;
+    border-radius: 4px;
     position: relative;
+}
+
+.character-customization-panel::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.customization-header {
     display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.customization-icon {
+    font-size: 1.8rem;
+    filter: drop-shadow(2px 2px 0px rgba(63, 42, 60, 0.3));
+}
+
+.customization-title {
+    font-family: "Press Start 2P", monospace;
+    font-size: 14px;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px rgba(63, 42, 60, 0.3), -1px -1px 0px rgba(63, 42, 60, 0.3);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.character-sprite-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    position: relative;
+    z-index: 2;
+}
+
+.pixel-character-main {
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
-/* Character Portrait estilo videojuego */
-.hero-character-portrait {
-    text-align: center;
-    max-width: 320px;
-    transform: rotate(-2deg);
+.character-sprite-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    filter: drop-shadow(4px 4px 0px rgba(63, 42, 60, 0.4));
+    animation: characterBounce 2s ease-in-out infinite;
+}
+
+@keyframes characterBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+.character-emoji,
+.pet-emoji {
+    font-size: 4.5rem;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    filter: drop-shadow(2px 2px 0px rgba(63, 42, 60, 0.3));
+    line-height: 1;
+    display: inline-block;
+}
+
+.pet-emoji {
+    font-size: 3rem;
+    margin-bottom: -10px;
+}
+
+/* Panel derecho: Character Portrait */
+.character-portrait-panel {
     position: relative;
 }
 
@@ -274,17 +371,6 @@ img {
     padding: 12px;
     position: relative;
     border-radius: 4px;
-}
-
-/* Icono de corazón en la esquina superior izquierda */
-.character-heart-icon {
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    font-size: 1.8rem;
-    z-index: 15;
-    filter: drop-shadow(2px 2px 0px rgba(63, 42, 60, 0.3));
-    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);
 }
 
 .character-portrait-frame::before {
@@ -300,6 +386,16 @@ img {
     z-index: 1;
 }
 
+.character-heart-icon {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    font-size: 1.8rem;
+    z-index: 15;
+    filter: drop-shadow(2px 2px 0px rgba(63, 42, 60, 0.3));
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);
+}
+
 .character-portrait-bg {
     background: linear-gradient(135deg, #b3d9ff 0%, #99ccff 100%);
     border: 3px solid var(--text-dark);
@@ -311,7 +407,6 @@ img {
     image-rendering: crisp-edges;
 }
 
-/* Patrón sutil en el fondo */
 .character-portrait-bg::before {
     content: "";
     position: absolute;
@@ -349,51 +444,6 @@ img {
     filter: contrast(1.1) brightness(0.95);
 }
 
-/* Personaje pixel art sobrepuesto */
-.character-sprite {
-    position: absolute;
-    bottom: 12px;
-    right: 12px;
-    z-index: 10;
-    filter: drop-shadow(3px 3px 0px rgba(63, 42, 60, 0.4));
-    animation: characterBounce 2s ease-in-out infinite;
-}
-
-@keyframes characterBounce {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-4px);
-    }
-}
-
-.character-sprite-container {
-    display: flex;
-    align-items: flex-end;
-    gap: 4px;
-    position: relative;
-}
-
-.character-emoji,
-.pet-emoji {
-    font-size: 3.5rem;
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
-    filter: drop-shadow(2px 2px 0px rgba(63, 42, 60, 0.3));
-    line-height: 1;
-    display: inline-block;
-}
-
-.pet-emoji {
-    font-size: 2.5rem;
-    margin-bottom: -8px;
-}
-
 .hero-caption {
     margin-top: 0.8rem;
     font-size: 18px;
@@ -403,6 +453,7 @@ img {
     text-transform: uppercase;
     font-size: 10px;
     letter-spacing: 1px;
+    text-align: center;
 }
 
 /* Stickers flotantes */
@@ -1043,5 +1094,27 @@ img {
     .hero-actions .btn {
         width: 100%;
         max-width: 260px;
+    }
+
+    .character-customization-interface {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .character-customization-panel {
+        order: 2;
+    }
+
+    .character-portrait-panel {
+        order: 1;
+    }
+
+    .character-emoji {
+        font-size: 3.5rem;
+    }
+
+    .pet-emoji {
+        font-size: 2.5rem;
     }
 }
