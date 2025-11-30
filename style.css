@@ -457,48 +457,74 @@ body {
 }
 
 /* ------------------------------------------------------ */
-/* FORMACIÓN */
+/* FORMACIÓN – pastillas tipo "Now Loading" */
 /* ------------------------------------------------------ */
 
 #formacion {
     background-color: var(--pink-alt);
 }
 
-.timeline {
-    border-left: 4px solid var(--border-dark);
+/* grid de cursos */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.2rem;
     margin-top: 2rem;
-    padding-left: 1.5rem;
+}
+
+/* cápsula estilo "Now Loading..." */
+.course-pill {
     position: relative;
+    padding: 0.9rem 1.2rem;
+    border-radius: 999px;
+    border: 3px solid var(--border-dark);
+    background-color: #ffffff;
+    box-shadow: 5px 5px 0 rgba(49, 24, 39, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: default;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
-.timeline::before {
-    content: "";
-    position: absolute;
-    left: -10px;
-    top: 0;
-    bottom: 0;
-    border-left: 2px dashed rgba(49, 24, 39, 0.4);
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 2rem;
-}
-
-.timeline-date {
+.course-pill span {
     font-family: "Press Start 2P", sans-serif;
-    font-size: 10px;
-    margin-bottom: 0.5rem;
-    color: var(--text-muted);
+    font-size: 11px;
+    letter-spacing: 0.5px;
 }
 
-.timeline-content {
-    background-color: var(--card-bg);
-    border-radius: 12px;
-    padding: 1rem 1.25rem;
-    border: 4px solid var(--border-dark);
-    box-shadow: 6px 6px 0 rgba(49, 24, 39, 0.7);
+/* pequeño “lift” al pasar el mouse */
+.course-pill:hover {
+    transform: translateY(-3px);
+    box-shadow: 7px 7px 0 rgba(49, 24, 39, 0.9);
 }
+
+/* tooltip con la categoría (estadística, programación, etc.) */
+.course-pill::after {
+    content: attr(data-category);
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background-color: #311827;
+    color: #fff7fb;
+    padding: 0.15rem 0.45rem;
+    border-radius: 6px;
+    font-family: "VT323", monospace;
+    font-size: 13px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 3px 3px 0 rgba(49, 24, 39, 0.8);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.course-pill:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
 
 /* ------------------------------------------------------ */
 /* CONTACTO */
