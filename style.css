@@ -623,6 +623,16 @@ img {
     position: relative;
 }
 
+.polaroid-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    filter: drop-shadow(2px 2px 0px rgba(63, 42, 60, 0.2));
+}
+
 /* Banner tipo cinta para el título */
 .polaroid h3 {
     margin: 0;
