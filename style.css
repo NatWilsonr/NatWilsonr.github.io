@@ -17,7 +17,10 @@
     /* Sombras pixel art */
     --pixel-shadow: 4px 4px 0px rgba(63, 42, 60, 0.3);
     --pixel-shadow-hover: 6px 6px 0px rgba(63, 42, 60, 0.4);
-    --pixel-border: 3px solid var(--text-dark);
+    --pixel-border: 4px solid var(--text-dark);
+    --pixel-border-thick: 5px solid var(--text-dark);
+    /* Texto con contorno */
+    --text-outline: 2px 2px 0px var(--text-dark), -2px -2px 0px var(--text-dark), 2px -2px 0px var(--text-dark), -2px 2px 0px var(--text-dark);
 }
 
 /* ------------------------------------------------------ */
@@ -34,12 +37,14 @@ body {
     margin: 0;
     font-family: "VT323", monospace;
     background-color: var(--pink-bg);
+    background-image:
+        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(244, 114, 182, 0.03) 10px, rgba(244, 114, 182, 0.03) 20px);
     color: var(--text-dark);
     line-height: 1.6;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
-    font-size: 20px;
+    font-size: 28px;
 }
 
 /* Efecto de pixelación global */
@@ -68,6 +73,27 @@ img {
     max-width: 960px;
     margin: 0 auto;
     padding: 0 1.5rem;
+    position: relative;
+}
+
+/* Decoración tipo HUD en contenedores */
+.container::before,
+.container::after {
+    content: "◆";
+    position: absolute;
+    top: -10px;
+    color: var(--pink-main);
+    font-size: 12px;
+    opacity: 0.3;
+    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.2);
+}
+
+.container::before {
+    left: 0;
+}
+
+.container::after {
+    right: 0;
 }
 
 /* ------------------------------------------------------ */
@@ -79,8 +105,21 @@ img {
     top: 0;
     z-index: 10;
     background-color: var(--pink-bg);
+    background-image:
+        repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(244, 114, 182, 0.05) 30px, rgba(244, 114, 182, 0.05) 31px);
     border-bottom: var(--pixel-border);
     box-shadow: 0 4px 0px rgba(63, 42, 60, 0.2);
+}
+
+.site-header::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--pink-soft);
+    border-top: 2px solid var(--text-dark);
 }
 
 .nav-container {
@@ -94,18 +133,21 @@ img {
     font-family: "Press Start 2P", monospace;
     font-weight: 400;
     color: var(--pink-main);
-    font-size: 14px;
+    font-size: 18px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-shadow: var(--text-outline);
+    filter: drop-shadow(0 0 2px rgba(244, 114, 182, 0.5));
 }
 
 .nav a {
     margin-left: 1rem;
-    font-size: 18px;
-    padding: 4px 8px;
-    border: 2px solid transparent;
+    font-size: 24px;
+    padding: 6px 12px;
+    border: 3px solid transparent;
     transition: all 0.1s ease;
     text-transform: uppercase;
+    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.3);
 }
 
 .nav a:hover {
@@ -121,6 +163,18 @@ img {
 
 .section {
     padding: 4rem 0;
+    position: relative;
+}
+
+.section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--pink-soft);
+    border-bottom: 2px solid var(--text-dark);
 }
 
 .section-alt {
@@ -129,18 +183,22 @@ img {
 
 .section h2 {
     font-family: "Press Start 2P", monospace;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     margin-bottom: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     line-height: 1.8;
+    text-shadow: var(--text-outline);
+    color: var(--pink-main);
+    filter: drop-shadow(0 0 3px rgba(244, 114, 182, 0.4));
 }
 
 .section-intro {
     color: var(--text-muted);
     max-width: 36rem;
     margin-bottom: 2rem;
-    font-size: 18px;
+    font-size: 24px;
+    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.2);
 }
 
 /* ------------------------------------------------------ */
@@ -149,6 +207,9 @@ img {
 
 .hero {
     padding: 5rem 0 4rem;
+    position: relative;
+    background-image:
+        repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(244, 114, 182, 0.02) 40px, rgba(244, 114, 182, 0.02) 41px);
 }
 
 .hero-content {
@@ -162,26 +223,30 @@ img {
     font-family: "Press Start 2P", monospace;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    font-size: 10px;
+    font-size: 12px;
     color: var(--text-muted);
     margin-bottom: 0.5rem;
     line-height: 1.6;
+    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.3);
 }
 
 .hero h1 {
     font-family: "Press Start 2P", monospace;
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
     margin: 0 0 1rem;
     line-height: 1.6;
     text-transform: uppercase;
+    text-shadow: var(--text-outline);
+    filter: drop-shadow(0 0 4px rgba(244, 114, 182, 0.5));
 }
 
 .hero-subtitle {
     max-width: 32rem;
     color: var(--text-muted);
     margin-bottom: 1.8rem;
-    font-size: 22px;
+    font-size: 28px;
     line-height: 1.5;
+    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.2);
 }
 
 .hero-actions .btn {
@@ -197,13 +262,26 @@ img {
 /* Polaroid más grande */
 .hero-polaroid {
     background: var(--card-bg);
-    padding: 1.1rem 1.1rem 1.6rem;
+    padding: 1.4rem 1.4rem 2rem;
     border: var(--pixel-border);
     box-shadow: var(--pixel-shadow);
     text-align: center;
-    max-width: 260px;
+    max-width: 300px;
     transform: rotate(-3deg);
     image-rendering: pixelated;
+    position: relative;
+}
+
+.hero-polaroid::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, var(--pink-soft) 0%, var(--pink-main) 100%);
+    z-index: -1;
+    border: 2px solid var(--text-dark);
 }
 
 .hero-polaroid-img {
@@ -229,8 +307,9 @@ img {
 
 .hero-caption {
     margin-top: 0.8rem;
-    font-size: 16px;
+    font-size: 20px;
     color: var(--text-muted);
+    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.2);
 }
 
 /* Stickers flotantes */
@@ -275,9 +354,9 @@ img {
 
 .btn {
     display: inline-block;
-    padding: 0.6rem 1.3rem;
+    padding: 0.8rem 1.6rem;
     border: var(--pixel-border);
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 400;
     cursor: pointer;
     text-transform: uppercase;
@@ -285,6 +364,7 @@ img {
     font-family: "VT323", monospace;
     position: relative;
     background-color: var(--card-bg);
+    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.3);
 }
 
 .btn-primary {
@@ -328,6 +408,9 @@ img {
 
 #sobre-mi {
     background-color: var(--pink-alt);
+    background-image:
+        repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(244, 114, 182, 0.05) 20px, rgba(244, 114, 182, 0.05) 21px);
+    position: relative;
 }
 
 .about-content {
@@ -336,12 +419,14 @@ img {
 
 .about-content p {
     margin-bottom: 0.6rem;
-    font-size: 18px;
+    font-size: 26px;
+    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.15);
 }
 
 .about-travel {
     color: var(--text-muted);
-    font-size: 18px;
+    font-size: 26px;
+    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.15);
 }
 
 /* Mapa + etiqueta flotante */
@@ -366,10 +451,11 @@ img {
     transform: translateX(-50%);
     background: var(--pink-bg);
     color: var(--text-dark);
-    padding: 0.4rem 0.9rem;
+    padding: 0.6rem 1.2rem;
     border: var(--pixel-border);
-    font-size: 16px;
+    font-size: 20px;
     box-shadow: var(--pixel-shadow);
+    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.2);
 }
 
 /* ------------------------------------------------------ */
@@ -378,12 +464,16 @@ img {
 
 #proyectos {
     background-color: var(--mauve-projects);
+    background-image:
+        repeating-linear-gradient(45deg, transparent, transparent 15px, rgba(255, 255, 255, 0.05) 15px, rgba(255, 255, 255, 0.05) 16px);
     color: #ffffff;
+    position: relative;
 }
 
 #proyectos h2,
 #proyectos .section-intro {
     color: #ffffff;
+    text-shadow: 3px 3px 0px rgba(63, 42, 60, 0.5), -1px -1px 0px rgba(63, 42, 60, 0.5), 1px -1px 0px rgba(63, 42, 60, 0.5), -1px 1px 0px rgba(63, 42, 60, 0.5);
 }
 
 .polaroid-grid {
@@ -396,14 +486,26 @@ img {
 .polaroid {
     background: var(--card-bg);
     width: 100%;
-    max-width: 240px;
-    padding: 12px;
-    padding-bottom: 32px;
+    max-width: 280px;
+    padding: 16px;
+    padding-bottom: 40px;
     border: var(--pixel-border);
     box-shadow: var(--pixel-shadow);
     position: relative;
     text-align: center;
     transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.polaroid::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: var(--pink-alt);
+    z-index: -1;
+    border: 2px solid var(--text-dark);
 }
 
 /* Imagen polaroid */
@@ -423,26 +525,28 @@ img {
 
 .polaroid h3 {
     margin: 0.7rem 0 0.3rem;
-    font-size: 18px;
+    font-size: 14px;
     color: var(--pink-main);
     font-weight: 400;
     font-family: "Press Start 2P", monospace;
     text-transform: uppercase;
     line-height: 1.5;
+    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.3);
 }
 
 .polaroid-link {
     display: inline-block;
     margin-top: 0.4rem;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 400;
     color: var(--text-dark);
     background: #ffe4f3;
-    padding: 0.25rem 0.7rem;
-    border: 2px solid var(--text-dark);
+    padding: 0.4rem 0.9rem;
+    border: 3px solid var(--text-dark);
     text-transform: uppercase;
     box-shadow: 2px 2px 0px rgba(63, 42, 60, 0.2);
     transition: all 0.1s ease;
+    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.2);
 }
 
 .polaroid-link:hover {
@@ -484,13 +588,14 @@ img {
     background: #ffffff;
     color: var(--text-dark);
     border: var(--pixel-border);
-    padding: 0.75rem 0.9rem;
-    font-size: 16px;
+    padding: 1rem 1.2rem;
+    font-size: 20px;
     box-shadow: var(--pixel-shadow-hover);
     opacity: 0;
     pointer-events: none;
     transform: translateY(6px);
     transition: opacity 0.2s ease, transform 0.2s ease;
+    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.15);
 }
 
 .polaroid:hover .polaroid-popup {
@@ -501,7 +606,8 @@ img {
 .popup-meta {
     margin-top: 0.4rem;
     color: var(--text-muted);
-    font-size: 14px;
+    font-size: 18px;
+    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.15);
 }
 
 /* ------------------------------------------------------ */
@@ -511,6 +617,17 @@ img {
 #habilidades h2 .gear {
     font-size: 1em;
     margin-left: 0.2rem;
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .skills-grid {
@@ -519,16 +636,39 @@ img {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
+.skill-column {
+    background: var(--pink-alt);
+    padding: 1.5rem;
+    border: var(--pixel-border);
+    box-shadow: var(--pixel-shadow);
+    position: relative;
+}
+
+.skill-column::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--pink-soft);
+    z-index: -1;
+    border: 2px solid var(--text-dark);
+}
+
 .skill-column ul {
     padding-left: 1.1rem;
-    font-size: 18px;
+    font-size: 24px;
+    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.15);
 }
 
 .skill-column h3 {
     font-family: "Press Start 2P", monospace;
-    font-size: 14px;
+    font-size: 16px;
     text-transform: uppercase;
     margin-bottom: 0.8rem;
+    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.3);
+    color: var(--pink-main);
 }
 
 /* Logos */
@@ -539,13 +679,40 @@ img {
     margin-top: 1.2rem;
 }
 
+.skills-icons {
+    background: var(--pink-alt);
+    padding: 1.5rem;
+    border: var(--pixel-border);
+    box-shadow: var(--pixel-shadow);
+    margin-top: 2rem;
+    position: relative;
+}
+
+.skills-icons::before {
+    content: "TECNOLOGÍAS";
+    position: absolute;
+    top: -12px;
+    left: 1rem;
+    background: var(--pink-bg);
+    padding: 0 0.5rem;
+    font-family: "Press Start 2P", monospace;
+    font-size: 10px;
+    color: var(--pink-main);
+    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.3);
+}
+
 .skills-icons img {
-    height: 32px;
+    height: 40px;
     width: auto;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
     filter: drop-shadow(2px 2px 0px rgba(63, 42, 60, 0.2));
+    transition: transform 0.1s ease;
+}
+
+.skills-icons img:hover {
+    transform: scale(1.1) translateY(-2px);
 }
 
 /* ------------------------------------------------------ */
@@ -554,12 +721,15 @@ img {
 
 #formacion {
     background-color: var(--pink-bg);
+    background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 25px, rgba(244, 114, 182, 0.03) 25px, rgba(244, 114, 182, 0.03) 26px);
 }
 
 .formacion-intro {
     max-width: 38rem;
     color: var(--text-muted);
-    font-size: 18px;
+    font-size: 26px;
+    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.15);
 }
 
 .courses-row {
@@ -574,12 +744,13 @@ img {
     position: relative;
     background: #f7cfa4;
     color: var(--text-dark);
-    padding: 0.45rem 1.3rem;
-    font-size: 18px;
+    padding: 0.6rem 1.6rem;
+    font-size: 22px;
     border: var(--pixel-border);
     box-shadow: var(--pixel-shadow);
     text-transform: uppercase;
     transition: all 0.1s ease;
+    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.2);
 }
 
 .course-bubble:hover {
@@ -592,10 +763,22 @@ img {
 /* CONTACTO */
 /* ------------------------------------------------------ */
 
+#contacto {
+    background-color: var(--pink-alt);
+    background-image:
+        repeating-linear-gradient(135deg, transparent, transparent 18px, rgba(244, 114, 182, 0.04) 18px, rgba(244, 114, 182, 0.04) 19px);
+}
+
+#contacto p {
+    font-size: 26px;
+    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.15);
+}
+
 .contact-list {
     list-style: none;
     padding-left: 0;
-    font-size: 18px;
+    font-size: 26px;
+    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.15);
 }
 
 .contact-list li {
@@ -623,9 +806,10 @@ img {
 .site-footer {
     padding: 1.5rem 0;
     border-top: var(--pixel-border);
-    font-size: 16px;
+    font-size: 22px;
     color: var(--text-muted);
     text-align: center;
+    text-shadow: 1px 1px 0px rgba(63, 42, 60, 0.15);
 }
 
 /* ------------------------------------------------------ */
