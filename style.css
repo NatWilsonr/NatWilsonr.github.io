@@ -381,6 +381,12 @@ body {
     }
 }
 
+.character-panel-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
 
 /* lo nuevo de Hero */
 /* ------------------------------------------------------ */
