@@ -428,12 +428,9 @@ body {
     display: block;
     width: 100%;
     height: auto;
-    max-height: 260px;
-    /* controla qué tan alto puede ser */
-    object-fit: contain;
-    /* se escala sin deformarse */
     image-rendering: pixelated;
 }
+
 
 
 /* Responsive para pantallas pequeñas */
