@@ -150,6 +150,57 @@ body {
 /* HERO — versión original restaurada */
 /* ------------------------------------------------------ */
 
+/* Layout nuevo dentro del panel */
+
+.character-main-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Fila superior: imagen + cajas a la derecha */
+.character-main-row {
+    display: flex;
+    gap: 1.25rem;
+    align-items: stretch;
+}
+
+/* Hacemos la imagen más chiquita */
+.character-image-container {
+    flex: 0 0 230px;
+    /* ancho fijo aprox */
+}
+
+/* Las cajas de quest y mascota se apilan a la derecha */
+.character-main-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Parte inferior: Likes + Saved spots, centradas una debajo de otra */
+.character-bottom-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+/* Responsive: en pantallas chicas, todo en columna */
+@media (max-width: 768px) {
+    .character-main-row {
+        flex-direction: column;
+    }
+
+    .character-image-container {
+        flex: 0 0 auto;
+        max-width: 260px;
+        margin: 0 auto;
+        /* centramos la imagen */
+    }
+}
+
+
 .hero-section {
     padding-block: 4rem 2rem;
 }
