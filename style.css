@@ -363,15 +363,19 @@ body {
 
 .character-section-title {
     position: absolute;
-    top: -11px;
-    left: 10px;
+    top: -16px;
+    /* un poquito más arriba */
+    left: 14px;
     background-color: #f1c58b;
     border: 3px solid #311827;
     border-radius: 999px;
-    padding: 0 0.5rem;
+    padding: 0.18rem 0.9rem;
+    /* más “pastilla” y menos aplastado */
     font-family: "Press Start 2P", sans-serif;
-    font-size: 9px;
+    font-size: 11px;
+    /* título más visible */
 }
+
 
 .character-section-description {
     font-size: 12px;
@@ -381,18 +385,22 @@ body {
 
 /* Grid de comida favorita */
 .likes-grid {
-    margin-top: 0.5rem;
+    margin-top: 0.6rem;
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0.35rem;
+    grid-template-columns: repeat(4, 150px);
+    /* cuadros más pequeños */
+    justify-content: center;
+    /* centrados en el panel */
+    gap: 0.6rem;
 }
 
 .like-slot {
     background-color: #fffbf1;
     border: 3px solid #311827;
-    border-radius: 8px;
-    padding: 0.2rem;
-    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    padding: 0.4rem;
+    height: 150px;
+    /* tamaño controlado */
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -400,10 +408,12 @@ body {
 }
 
 .like-slot img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    /* no se recortan */
 }
+
 
 /* Mapa de saved spots */
 .saved-spots-map {
@@ -418,8 +428,13 @@ body {
     display: block;
     width: 100%;
     height: auto;
+    max-height: 260px;
+    /* controla qué tan alto puede ser */
+    object-fit: contain;
+    /* se escala sin deformarse */
     image-rendering: pixelated;
 }
+
 
 /* Responsive para pantallas pequeñas */
 @media (max-width: 900px) {
