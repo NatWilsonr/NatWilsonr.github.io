@@ -40,32 +40,38 @@
 
                 <div class="character-customization-interface">
                     <!-- Panel: Character Sheet -->
-                    <div class="character-customization-panel">
-                        <div class="customization-header">
-                            <h2 class="customization-title">Character Profile</h2>
-                        </div>
+                    <div class="customization-header">
+                        <h2 class="customization-title">Character Profile</h2>
+                    </div>
 
-                        <div class="character-panel-column">
+                    <div class="character-main-layout">
+                        <!-- FILA SUPERIOR: imagen + quest + mascota -->
+                        <div class="character-main-row">
                             <div class="character-image-container">
                                 <img src="assets/character-portrait.png" alt="Character portrait"
                                     class="character-image" />
                             </div>
 
-                            <div class="character-stat-box">
-                                <div class="character-stat-label">Current quest</div>
-                                <div class="character-stat-text">
-                                    Convertir datos en historias que sí le sirvan a la gente.
+                            <div class="character-main-right">
+                                <div class="character-stat-box">
+                                    <div class="character-stat-label">Current quest</div>
+                                    <div class="character-stat-text">
+                                        Convertir datos en historias que sí le sirvan a la gente.
+                                    </div>
+                                </div>
+
+                                <div class="pet-slot">
+                                    <div class="pet-label">Companion</div>
+                                    <div class="pet-frame">
+                                        <!-- aquí luego pones la imagen de tu mascota -->
+                                        <img src="assets/pet-placeholder.png" alt="Mascota de Nat" class="pet-image" />
+                                    </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="pet-slot">
-                                <div class="pet-label">Companion</div>
-                                <div class="pet-frame">
-                                    <!-- aquí luego pones la imagen de tu mascota -->
-                                    <img src="assets/pet-placeholder.png" alt="Mascota de Nat" class="pet-image" />
-                                </div>
-                            </div>
-
+                        <!-- PARTE INFERIOR: Likes + Saved spots -->
+                        <div class="character-bottom-sections">
                             <!-- Sección LIKES -->
                             <div class="character-section">
                                 <div class="character-section-title">Likes</div>
@@ -103,10 +109,8 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -116,9 +120,7 @@
                 <div class="about-text">
                     <h2>Sobre mí</h2>
                     <p>
-                        Soy estudiante de Ciencia de Datos en el ITAM y me gusta pensar que
-                        los datos no son solo números: detrás de cada fila hay personas, historias
-                        y decisiones importantes.
+                        Soy estudiante de Ciencia de Datos en el ITAM.
                     </p>
                     <p>
                         Me interesa trabajar con proyectos que mezclen ciudades, movilidad, políticas públicas
