@@ -431,6 +431,61 @@ body {
     image-rendering: pixelated;
 }
 
+.saved-spots-map {
+    position: relative;
+}
+
+.map-pin {
+    position: absolute;
+    font-size: 30px;
+    /* cambia si quieres más chiquito o más grande */
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/* Animación de parpadeo suave */
+@keyframes softBlink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.35;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.map-pin {
+    position: absolute;
+    font-size: 30px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: softBlink 3s ease-in-out infinite;
+}
+
+.pin-mexico {
+    animation-delay: 0s;
+}
+
+.pin-canada {
+    animation-delay: 0.4s;
+}
+
+.pin-netherlands {
+    animation-delay: 0.9s;
+}
+
+.pin-japan {
+    animation-delay: 0.2s;
+}
+
+.pin-taiwan {
+    animation-delay: 0.7s;
+}
+
 
 
 /* Responsive para pantallas pequeñas */
