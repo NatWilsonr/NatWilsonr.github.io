@@ -816,6 +816,21 @@ body {
     }
 }
 
+/* Enlace a los proyectos */
+
+.project-link {
+    text-decoration: none;
+}
+
+.project-link img {
+    display: block;
+}
+
+.project-link:hover {
+    cursor: pointer;
+}
+
+
 /* ------------------------------------------------------ */
 /* ⭐ HABILIDADES: NUEVO INVENTARIO */
 /* ------------------------------------------------------ */
