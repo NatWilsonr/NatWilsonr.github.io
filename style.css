@@ -469,32 +469,32 @@ body {
 
 /* Pins de las ciudades desbloqueadas */
 .pin-mexico {
-    top: 62%;
-    left: 26%;
+    top: 42%;
+    left: 23%;
     animation-delay: 0s;
 }
 
 .pin-canada {
-    top: 24%;
-    left: 24%;
+    top: 30%;
+    left: 19%;
     animation-delay: 0.4s;
 }
 
 .pin-netherlands {
-    top: 32%;
-    left: 53%;
+    top: 30%;
+    left: 51%;
     animation-delay: 0.9s;
 }
 
 .pin-japan {
-    top: 42%;
-    left: 79%;
+    top: 38%;
+    left: 80%;
     animation-delay: 0.2s;
 }
 
 .pin-taiwan {
-    top: 52%;
-    left: 82%;
+    top: 42%;
+    left: 77%;
     animation-delay: 0.7s;
 }
 
