@@ -466,25 +466,38 @@ body {
     animation: softBlink 3s ease-in-out infinite;
 }
 
+
+/* Pins de las ciudades desbloqueadas */
 .pin-mexico {
+    top: 62%;
+    left: 26%;
     animation-delay: 0s;
 }
 
 .pin-canada {
+    top: 24%;
+    left: 24%;
     animation-delay: 0.4s;
 }
 
 .pin-netherlands {
+    top: 32%;
+    left: 53%;
     animation-delay: 0.9s;
 }
 
 .pin-japan {
+    top: 42%;
+    left: 79%;
     animation-delay: 0.2s;
 }
 
 .pin-taiwan {
+    top: 52%;
+    left: 82%;
     animation-delay: 0.7s;
 }
+
 
 
 
