@@ -883,7 +883,9 @@ body {
 }
 
 .inventory-title {
-    display: inline-block;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0.35rem 0.9rem;
     border-radius: 999px;
     border: 3px solid #311827;
