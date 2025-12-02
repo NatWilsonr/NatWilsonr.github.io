@@ -733,19 +733,24 @@ body {
 /* ⭐ PROYECTOS – VERSIÓN SENCILLA CON FONDO CAFECITO */
 /* ------------------------------------------------------ */
 
-#proyectos {
-    background: transparent;
-    /* mismo fondo que el body */
-    color: var(--text-black);
-    border-block: none;
-    /* quitamos la franja */
+body {
+    font-family: "VT323", system-ui;
+    color: var(--text-dark);
+
+    /* Fondo tipo videojuego fijo */
+    background-image: url("assets/background-sky.png");
+    background-size: cover;
+    /* llena la pantalla */
+    background-position: center top;
+    /* alinea el cielo arriba */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* el truco del efecto “nivel estático” */
+
+    /* Un poco de margen visual entre secciones */
+    scroll-behavior: smooth;
 }
 
-#proyectos h2,
-#proyectos .section-intro {
-    color: var(--text-black);
-    text-shadow: none;
-}
 
 
 /* Contenedor de tarjetas al mismo nivel */
