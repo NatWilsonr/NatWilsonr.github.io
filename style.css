@@ -31,8 +31,18 @@
 
 body {
     font-family: "VT323", system-ui;
-    background-color: var(--pink-bg);
+    color: var(--text-dark);
+
+    background-image: url("assets/background-sky.png");
+    background-size: cover;
+    /* cubre todo el ancho */
+    background-attachment: fixed;
+    /* el truco para que se vea como videojuego */
+    background-position: center top;
+    /* empieza desde el cielo */
+    background-repeat: no-repeat;
 }
+
 
 /* ------------------------------------------------------ */
 /* HEADER — versión original restaurada */
@@ -724,19 +734,19 @@ body {
 /* ------------------------------------------------------ */
 
 #proyectos {
-    background-color: var(--projects-bg);
-    /* ← Café pastel */
+    background: transparent;
+    /* mismo fondo que el body */
     color: var(--text-black);
-    /* Texto negro */
-    border-block: 4px solid var(--border-dark);
+    border-block: none;
+    /* quitamos la franja */
 }
 
-/* Texto completamente negro */
 #proyectos h2,
 #proyectos .section-intro {
     color: var(--text-black);
     text-shadow: none;
 }
+
 
 /* Contenedor de tarjetas al mismo nivel */
 .project-card-container {
