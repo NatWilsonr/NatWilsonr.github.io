@@ -916,8 +916,8 @@ body {
     box-shadow: 4px 4px 0 rgba(49, 24, 39, .4);
     position: relative;
     /* necesario para el tooltip */
-    overflow: hidden;
-    /* por si alguna imagen se sale un poquito */
+    overflow: visible;
+    /* antes estaba hidden en caso de que alguna imagen se saliera */
 }
 
 .slot img {
