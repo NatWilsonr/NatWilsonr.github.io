@@ -838,7 +838,7 @@ body {
     background-color: #ffffff;
     box-shadow: 4px 4px 0 rgba(49, 24, 39, 0.6);
     font-family: "Press Start 2P", sans-serif;
-    font-size: 11px;
+    font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     transition: transform .12s ease, box-shadow .12s ease;
