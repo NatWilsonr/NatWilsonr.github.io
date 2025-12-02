@@ -939,6 +939,23 @@ body {
 }
 
 
+/* ------------------------------------------------------ */
+/* INVENTARIO — animación al pasar el mouse */
+/* ------------------------------------------------------ */
+
+.slot {
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.slot:hover {
+    transform: scale(0.95) translateY(2px);
+    box-shadow: 2px 2px 0 rgba(49, 24, 39, 0.5) inset,
+        3px 3px 0 rgba(49, 24, 39, 0.5);
+}
+
+
+
+
 /* Tooltip del inventario */
 .slot::after {
     content: attr(data-label);
