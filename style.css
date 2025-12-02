@@ -306,7 +306,7 @@ body {
 
 .character-stat-label {
     font-family: "VT323", monospace;
-    font-size: 14px;
+    font-size: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #7a4b33;
@@ -314,7 +314,7 @@ body {
 }
 
 .character-stat-text {
-    font-size: 13px;
+    font-size: 24px;
     line-height: 1.4;
 }
 
@@ -328,7 +328,7 @@ body {
 
 .pet-label {
     font-family: "VT323", monospace;
-    font-size: 14px;
+    font-size: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #7a4b33;
@@ -372,7 +372,7 @@ body {
     padding: 0.18rem 0.9rem;
     /* más “pastilla” y menos aplastado */
     font-family: "Press Start 2P", sans-serif;
-    font-size: 11px;
+    font-size: 15px;
     /* título más visible */
 }
 
