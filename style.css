@@ -477,25 +477,25 @@ body {
 .pin-canada {
     top: 30%;
     left: 19%;
-    animation-delay: 0.4s;
+    animation-delay: 0s;
 }
 
 .pin-netherlands {
     top: 30%;
     left: 51%;
-    animation-delay: 0.9s;
+    animation-delay: 0s;
 }
 
 .pin-japan {
     top: 38%;
     left: 80%;
-    animation-delay: 0.2s;
+    animation-delay: 0s;
 }
 
 .pin-taiwan {
     top: 42%;
     left: 77%;
-    animation-delay: 0.7s;
+    animation-delay: 0s;
 }
 
 
