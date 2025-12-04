@@ -308,7 +308,7 @@ body {
 
 /* Cajita para Current Quest */
 .character-stat-box {
-    background-color: #ffeecf;
+    background-color: #ffffff;
     border: 3px solid #311827;
     border-radius: 10px;
     padding: 0.4rem 0.6rem;
@@ -364,7 +364,7 @@ body {
 
 /* Secciones derecha: Likes + Saved spots */
 .character-section {
-    background-color: #ffeecf;
+    background-color: #ffffff;
     border: 3px solid #311827;
     border-radius: 10px;
     padding: 0.55rem 0.6rem;
@@ -405,7 +405,7 @@ body {
 }
 
 .like-slot {
-    background-color: #fffbf1;
+    background-color: #ffffff;
     border: 3px solid #311827;
     border-radius: 10px;
     padding: 0.4rem;
@@ -431,7 +431,7 @@ body {
     border-radius: 10px;
     border: 3px solid #311827;
     overflow: hidden;
-    background-color: #c7f9ff;
+    background-color: #ffffff;
 }
 
 .saved-spots-map img {
