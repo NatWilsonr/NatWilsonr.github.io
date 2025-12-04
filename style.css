@@ -715,13 +715,6 @@ body {
 }
 
 
-/* ------------------------------------------------------ */
-/* SOBRE MÍ */
-/* ------------------------------------------------------ */
-
-/* ------------------------------------------------------ */
-/* SOBRE MÍ – NUEVO DISEÑO DE DOS TARJETAS */
-/* ------------------------------------------------------ */
 
 /* ------------------------------------------------------ */
 /* SOBRE MÍ – DOS TARJETAS CON ANIMACIÓN */
@@ -800,6 +793,50 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* ------------------------------------------------------ */
+/* EFECTO DE TEXTO ESCRITO (CSS PURO) */
+/* ------------------------------------------------------ */
+
+.typing {
+    display: inline-block;
+    white-space: nowrap;
+    /* que no haga salto de línea */
+    overflow: hidden;
+    /* oculta el texto hasta "escribirlo" */
+    border-right: 3px solid #311827;
+    /* cursor */
+    animation: typing 3s steps(40) forwards,
+        blinkCursor .75s step-end infinite;
+    font-size: 22px;
+}
+
+/* animación de escritura */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* cursor parpadeando */
+@keyframes blinkCursor {
+    from {
+        border-color: #311827;
+    }
+
+    to {
+        border-color: transparent;
+    }
+}
+
+/* si quieres que el segundo texto empiece después */
+.about-card:nth-child(2) .typing {
+    animation-delay: 0.8s;
 }
 
 
