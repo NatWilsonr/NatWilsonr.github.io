@@ -262,7 +262,7 @@ body {
 
 .customization-title {
     font-family: "Press Start 2P", sans-serif;
-    font-size: 12px;
+    font-size: 17px;
     text-transform: uppercase;
 }
 
@@ -719,15 +719,52 @@ body {
 /* SOBRE MÍ */
 /* ------------------------------------------------------ */
 
-.section {
-    padding-block: 4rem;
+/* ------------------------------------------------------ */
+/* SOBRE MÍ – NUEVO DISEÑO DE DOS TARJETAS */
+/* ------------------------------------------------------ */
+
+.about-two-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
 }
 
-.section h2 {
-    font-family: "Press Start 2P";
-    font-size: 20px;
-    margin-bottom: 1rem;
+.about-card {
+    flex: 1 1 320px;
+    background-color: #ffeecf;
+    border: 4px solid #311827;
+    border-radius: 16px;
+    padding: 1.3rem;
+    box-shadow: 6px 6px 0 rgba(49, 24, 39, 0.6);
+    position: relative;
 }
+
+.about-card-title {
+    position: absolute;
+    top: -14px;
+    left: 20px;
+    background-color: #f1c58b;
+    border: 3px solid #311827;
+    border-radius: 999px;
+    padding: 0.2rem 1rem;
+    font-family: "Press Start 2P", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.about-card p {
+    font-size: 22px;
+    line-height: 1.4;
+}
+
+.about-card a {
+    color: var(--pink-main);
+    text-decoration: none;
+    font-weight: bold;
+}
+
 
 /* ------------------------------------------------------ */
 /* ⭐ PROYECTOS – VERSIÓN SENCILLA CON FONDO CAFECITO */
