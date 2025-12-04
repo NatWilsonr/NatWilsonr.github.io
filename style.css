@@ -725,8 +725,10 @@ body {
     flex-direction: row;
     gap: 2rem;
     margin-top: 1.5rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    /* ← IMPORTANTE: evita que se rompa a dos líneas */
 }
+
 
 .about-card {
     flex: 1 1 320px;
@@ -804,6 +806,7 @@ body {
     white-space: nowrap;
     /* que no haga salto de línea */
     overflow: hidden;
+    display: inline-block;
     /* oculta el texto hasta "escribirlo" */
     border-right: 3px solid #311827;
     /* cursor */
@@ -811,6 +814,11 @@ body {
         blinkCursor .75s step-end infinite;
     font-size: 22px;
 }
+
+.typing {
+    max-width: 100%;
+}
+
 
 /* animación de escritura */
 @keyframes typing {
